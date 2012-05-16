@@ -1,13 +1,36 @@
 
-# To provide a coloured version of $?, wrapped in ().  Used in PS1
-pretty_exit_code(){
-  LAST_COMMAND_STATUS=$?
-  if [ $LAST_COMMAND_STATUS = 0 ];
-  then echo -e "\033[33m($LAST_COMMAND_STATUS)\033[0m";
-  else echo -e "\033[31m($LAST_COMMAND_STATUS)\033[0m";
-  fi
+olddir=$(pwd)
+
+dots=~/dotfiles
+
+function addToPath(){
+    #if [[ $FOO =~ "fii" ]]; then
+    #    echo hi
+    #fi
+    PATH="$1:$PATH"
 }
-PS1="\$(pretty_exit_code)\[\e[32;1m\]\u@\h:\[\e[34;1m\]\w \n\$ \[\e[0m\]"
+
+
+function sourceDir(){
+    for file in *; do  # sets $file to * if empty directory
+        #echo "saw $file";
+        if [ -d $file ]; then
+            echo "Recursing into $file";
+            cd $file;
+            sourceDir $file;
+            cd ..;
+        elif [[ $file == *.path ]]; then
+            echo "$file is a .path";
+            source $file;
+        fi
+    done
+}
+cd $dots
+source prompt
+sourceDir
+cd $olddir
+
+
 
 export EDITOR=vim
 #alias ls='ls -F --color=auto'
@@ -16,7 +39,4 @@ export EDITOR=vim
 export HISTCONTROL=ignoreboth
 
 
-# set PATH so it includes user's private bin if it exists
-if [ -d ~/bin ] ; then
-    PATH=~/bin:"${PATH}"
-fi
+

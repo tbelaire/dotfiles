@@ -1,0 +1,11 @@
+# prompt
+
+# To provide a coloured version of $?, wrapped in ().  Used in PS1
+pretty_exit_code(){
+  LAST_COMMAND_STATUS=$?
+  if [ $LAST_COMMAND_STATUS = 0 ];
+  then echo -e "\033[33m($LAST_COMMAND_STATUS)\033[0m";
+  else echo -e "\033[31m($LAST_COMMAND_STATUS)\033[0m";
+  fi
+}
+export PS1="\$(pretty_exit_code)\[\e[32;1m\]\u@\h:\[\e[34;1m\]\w \n\$ \[\e[0m\]"
