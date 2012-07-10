@@ -3,6 +3,10 @@ olddir=$(pwd)
 
 dots=~/dotfiles
 
+# not used yet, still hardcoded
+extentions_to_source=".path"
+
+
 function addToPath(){
     #if [[ $FOO =~ "fii" ]]; then
     #    echo hi
@@ -15,12 +19,12 @@ function sourceDir(){
     for file in *; do  # sets $file to * if empty directory
         #echo "saw $file";
         if [ -d $file ]; then
-            echo "Recursing into $file";
+            # echo "Recursing into $file";
             cd $file;
             sourceDir $file;
             cd ..;
         elif [[ $file == *.path ]]; then
-            echo "$file is a .path";
+            # echo "$file is a .path";
             source $file;
         fi
     done
@@ -39,4 +43,10 @@ export EDITOR=vim
 export HISTCONTROL=ignoreboth
 
 
+
+
+( [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm") || echo "Couldn't load rvm shell sccript" 
+# Load RVM into a shell session *as a function*
+
+source ~/.git-completion.bash
 

@@ -1,0 +1,2 @@
+alias sshcsc='ssh -t tbelaire@taurine.csclub.uwaterloo.ca "screen -dR"'
+alias sshcscweb='ssh -t tbelaire@caffeine.csclub.uwaterloo.ca "screen -dR"'

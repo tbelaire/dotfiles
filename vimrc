@@ -1,17 +1,17 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-
 " =============== Pathogen Initialization ===============
 " This loads all the plugins in ~/.vim/bundle
 " Use tpope's pathogen plugin to manage all other plugins
 
-"  runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-"  call pathogen#infect()
-"  call pathogen#helptags()
+runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
 
 " ================ General Config ====================
 
+set encoding=utf-8              "Use utf-8
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -29,35 +29,49 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
+" Save work when tabbing away.  I think it requires gui
+"au FocusLost * :wa
+" sets jj to to exit insert mode
+inoremap jj <ESC>
+
+" *E*dit my *V*imrc in a split
+:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" *S*ource my *V*imrc
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" ================ Movement Config  =================
+" Set tab to just to matching paren (not bound before?)
+nnoremap <tab> %
+vnoremap <tab> %
+
 " ================ Search Settings  =================
 
 set incsearch        "Find the next match as we type the search
 set hlsearch         "Hilight searches by default
+set gdefault         "Default is now to chang all occurences on a line
+" Use normal regexs, not vim ones
+nnoremap / /\v
+vnoremap / /\v
+" Set <leader><space> to clear the search and highlighting
+nnoremap <leader><space> :noh<cr>
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 
-" ================ Turn Off Swap Files ==============
-
-set noswapfile
-set nobackup
-set nowb
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
-" Only works in MacVim (gui) mode.
+" Only works in MacVim (gui) mode. As of 7.3 it doesn't require gui
 
-if has('gui_running')
-  set undodir=~/.vim/backups
-  set undofile
-endif
+set undodir=~/.vim/backups
+set undofile
 
 " ================ Indentation ======================
 
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set expandtab
 
 filetype plugin on
