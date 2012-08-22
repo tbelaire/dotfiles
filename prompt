@@ -8,4 +8,8 @@ pretty_exit_code(){
   else echo -e "\033[31m($LAST_COMMAND_STATUS)\033[0m";
   fi
 }
-export PS1="\$(pretty_exit_code)\[\e[32;1m\]\u@\h:\[\e[34;1m\]\w \n\$ \[\e[0m\]"
+lightgreen='\[\e[32;1m\]'
+blue='\[\e[34;1m\]'
+black='\[\e[0m\]'
+color='\[\e[33;1m\]'
+export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $color \$(__git_ps1 '(%s)') \n$blue\$ $black"

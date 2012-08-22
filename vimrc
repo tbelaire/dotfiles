@@ -26,8 +26,11 @@ set autoread                    "Reload files changed outside vim
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
-"turn on syntax highlighting
+" turn on syntax highlighting
 syntax on
+
+" Turn on the status bar
+set ruler
 
 " Save work when tabbing away.  I think it requires gui
 "au FocusLost * :wa

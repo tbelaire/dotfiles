@@ -30,6 +30,9 @@ function sourceDir(){
     done
 }
 cd $dots
+
+source ~/dotfiles/git-completion.bash
+
 source prompt
 sourceDir
 cd $olddir
@@ -37,7 +40,7 @@ cd $olddir
 
 
 export EDITOR=vim
-#alias ls='ls -F --color=auto'
+alias ls='ls -G'
 #alias ll='ls -lA'
 # Ignore line that start with spaces, and duplicate lines
 export HISTCONTROL=ignoreboth
@@ -48,5 +51,4 @@ export HISTCONTROL=ignoreboth
 ( [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm") || echo "Couldn't load rvm shell sccript" 
 # Load RVM into a shell session *as a function*
 
-source ~/.git-completion.bash
 
