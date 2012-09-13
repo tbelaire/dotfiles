@@ -18,8 +18,8 @@ function addToPath(){
 function sourceDir(){
     for file in *; do  # sets $file to * if empty directory
         #echo "saw $file";
-        if [ -d $file ]; then
-            # echo "Recursing into $file";
+        if [ -d $file ] && [ $(hostname) = $file ]; then
+            #echo "Recursing into $file";
             cd $file;
             sourceDir $file;
             cd ..;
@@ -40,8 +40,6 @@ cd $olddir
 
 
 export EDITOR=vim
-alias ls='ls -G'
-#alias ll='ls -lA'
 # Ignore line that start with spaces, and duplicate lines
 export HISTCONTROL=ignoreboth
 

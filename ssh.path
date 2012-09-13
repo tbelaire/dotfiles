@@ -1,2 +1,4 @@
 alias sshcsc='ssh -t tbelaire@taurine.csclub.uwaterloo.ca "screen -dR"'
 alias sshcscweb='ssh -t tbelaire@caffeine.csclub.uwaterloo.ca "screen -dR"'
+alias sshschool='ssh -Y -t tbelaire@linux028.student.cs.uwaterloo.ca "screen -dR"'
+

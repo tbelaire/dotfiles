@@ -11,5 +11,8 @@ pretty_exit_code(){
 lightgreen='\[\e[32;1m\]'
 blue='\[\e[34;1m\]'
 black='\[\e[0m\]'
-color='\[\e[33;1m\]'
-export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $color \$(__git_ps1 '(%s)') \n$blue\$ $black"
+yellow='\[\e[33;1m\]'
+
+GIT_PS1_SHOWUPSTREAM="verbose"
+GIT_PS1_SHOWDIRTYSTATE='yes'
+export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(%s)') \n$blue\$ $black"

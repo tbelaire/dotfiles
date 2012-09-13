@@ -1,0 +1,5 @@
+# Use the celler vim path which has python support
+addToPath "/usr/local/Cellar/vim/7.3.632/bin/vim"
+
+# Make vi mean vim, I had some trouble  making links to do this
+alias vi=vim

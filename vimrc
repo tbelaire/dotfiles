@@ -59,6 +59,10 @@ vnoremap / /\v
 nnoremap <leader><space> :noh<cr>
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :call VisualSelection('f', '')<CR>
+vnoremap <silent> # :call VisualSelection('b', '')<CR>
+
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
@@ -83,7 +87,7 @@ filetype indent on
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
-set nowrap       "Don't wrap lines
+set wrap       "Yes wrap lines
 set linebreak    "Wrap lines at convenient points
 
 " ================ Folds ============================
@@ -100,6 +104,31 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
 " ================ Scrolling ========================
 
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
+set scrolloff=8          "Start scrolling when we're 8 lines away from margins
+"Yes wrap lines, so this is not needed
+"set sidescrolloff=1
+"set sidescroll=1
+
+
+" Treat long lines as break lines (useful when moving around in them)
+map j gj
+map k gk
+
+" ================= Math =============================
+
+imap \delta δ
+
+
+" ================= Python ===========================
+"
+" Add the virtualenv's site-packages to vim path
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
