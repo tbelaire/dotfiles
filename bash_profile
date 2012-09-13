@@ -19,7 +19,7 @@ function sourceDir(){
     for file in *; do  # sets $file to * if empty directory
         #echo "saw $file";
         if [ -d $file ] && [ $(hostname) = $file ]; then
-            #echo "Recursing into $file";
+            echo "Recursing into $file";
             cd $file;
             sourceDir $file;
             cd ..;
@@ -43,10 +43,5 @@ export EDITOR=vim
 # Ignore line that start with spaces, and duplicate lines
 export HISTCONTROL=ignoreboth
 
-
-
-
-( [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm") || echo "Couldn't load rvm shell sccript" 
-# Load RVM into a shell session *as a function*
 
 
