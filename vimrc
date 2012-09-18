@@ -17,7 +17,7 @@ set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
+"set gcr=a:blinkon0              "Disable cursor blink
 
 set autoread                    "Reload files changed outside vim
 
@@ -115,9 +115,41 @@ map j gj
 map k gk
 
 " ================= Math =============================
-
+imap \alpha α
+imap \beta β
+imap \gamma γ
 imap \delta δ
+imap \epsilon ε
+imap \eta η
+imap \theta θ
+imap \iota ι
+imap \kappa κ
+imap \lambda λ
+imap \mu μ
+imap \sigma σ
+imap \in ∈
+imap \forall ∀
+imap \exists ∃
+imap \notexists ∄
 
+imap \RR ℝ
+imap \CC ℂ
+
+imap \scriptS 𝒮
+
+imap \subi ᵢ
+imap \sub0 ₀
+imap \sub1 ₁
+imap \sub2 ₂
+imap \sub3 ₃
+imap \sub4 ₄
+imap \sub5 ₅
+imap \sub6 ₆
+imap \sub7 ₇
+imap \sub8 ₈
+imap \sub9 ₉
+
+imap \doublearrow ⇋
 
 " ================= Python ===========================
 "
