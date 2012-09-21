@@ -127,13 +127,27 @@ imap \kappa κ
 imap \lambda λ
 imap \mu μ
 imap \sigma σ
+
+imap \Psi Ψ
+imap \psi ψ
+imap \Phi Φ
+imap \phi φ
+
 imap \in ∈
+imap \subset ⊆
+imap \ssubset ⊂
+imap \cup ∪
+imap \cap ∩
 imap \forall ∀
 imap \exists ∃
 imap \notexists ∄
 
 imap \RR ℝ
 imap \CC ℂ
+imap \NN ℕ
+imap \ZZ ℤ
+imap \HH ℍ
+imap \QQ ℚ
 
 imap \scriptS 𝒮
 
