@@ -127,6 +127,7 @@ imap \kappa κ
 imap \lambda λ
 imap \mu μ
 imap \sigma σ
+imap \omega ω
 
 imap \Psi Ψ
 imap \psi ψ
@@ -141,6 +142,17 @@ imap \cap ∩
 imap \forall ∀
 imap \exists ∃
 imap \notexists ∄
+imap \o+ ⊕
+imap \ox ⊗
+imap \o- ⊖
+imap \o. ⊙
+imap \o/ ⊘
+
+imap \trans ᵀ
+imap \bar  ̅
+imap \hat  ̂
+imap \wav  ̃
+imap \under  ̲
 
 imap \RR ℝ
 imap \CC ℂ
@@ -162,6 +174,17 @@ imap \sub6 ₆
 imap \sub7 ₇
 imap \sub8 ₈
 imap \sub9 ₉
+
+imap \sup0 ⁰
+imap \sup1 ¹
+imap \sup2 ²
+imap \sup3 ³
+imap \sup4 ⁴
+imap \sup5 ⁵
+imap \sup6 ⁶
+imap \sup7 ⁷
+imap \sup8 ⁸
+imap \sup9 ⁹
 
 imap \doublearrow ⇋
 
