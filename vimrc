@@ -111,28 +111,28 @@ set scrolloff=8          "Start scrolling when we're 8 lines away from margins
 
 
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+nnoremap j gj
+nnoremap k gk
 
 " ================= Math =============================
-imap \alpha α
-imap \beta β
-imap \gamma γ
-imap \delta δ
-imap \epsilon ε
-imap \eta η
-imap \theta θ
-imap \iota ι
-imap \kappa κ
-imap \lambda λ
-imap \mu μ
-imap \sigma σ
-imap \omega ω
+ab alpha α
+ab beta β
+ab gamma γ
+ab delta δ
+ab epsilon ε
+ab eta η
+ab theta θ
+ab iota ι
+ab kappa κ
+ab lambda λ
+ab mu μ
+ab sigma σ
+ab omega ω
 
-imap \Psi Ψ
-imap \psi ψ
-imap \Phi Φ
-imap \phi φ
+ab Psi Ψ
+ab psi ψ
+ab Phi Φ
+ab phi φ
 
 imap \in ∈
 imap \subset ⊆
