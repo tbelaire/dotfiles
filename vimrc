@@ -17,7 +17,7 @@ set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
+"set gcr=a:blinkon0              "Disable cursor blink
 
 set autoread                    "Reload files changed outside vim
 
@@ -111,13 +111,82 @@ set scrolloff=8          "Start scrolling when we're 8 lines away from margins
 
 
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+nnoremap j gj
+nnoremap k gk
 
 " ================= Math =============================
+ab alpha α
+ab beta β
+ab gamma γ
+ab delta δ
+ab epsilon ε
+ab eta η
+ab theta θ
+ab iota ι
+ab kappa κ
+ab lambda λ
+ab mu μ
+ab sigma σ
+ab omega ω
 
-imap \delta δ
+ab Psi Ψ
+ab psi ψ
+ab Phi Φ
+ab phi φ
 
+imap \in ∈
+imap \subset ⊆
+imap \ssubset ⊂
+imap \cup ∪
+imap \cap ∩
+imap \forall ∀
+imap \exists ∃
+imap \notexists ∄
+imap \o+ ⊕
+imap \ox ⊗
+imap \o- ⊖
+imap \o. ⊙
+imap \o/ ⊘
+
+imap \trans ᵀ
+imap \bar  ̅
+imap \hat  ̂
+imap \wav  ̃
+imap \under  ̲
+
+imap \RR ℝ
+imap \CC ℂ
+imap \NN ℕ
+imap \ZZ ℤ
+imap \HH ℍ
+imap \QQ ℚ
+
+imap \scriptS 𝒮
+
+imap \subi ᵢ
+imap \sub0 ₀
+imap \sub1 ₁
+imap \sub2 ₂
+imap \sub3 ₃
+imap \sub4 ₄
+imap \sub5 ₅
+imap \sub6 ₆
+imap \sub7 ₇
+imap \sub8 ₈
+imap \sub9 ₉
+
+imap \sup0 ⁰
+imap \sup1 ¹
+imap \sup2 ²
+imap \sup3 ³
+imap \sup4 ⁴
+imap \sup5 ⁵
+imap \sup6 ⁶
+imap \sup7 ⁷
+imap \sup8 ⁸
+imap \sup9 ⁹
+
+imap \doublearrow ⇋
 
 " ================= Python ===========================
 "
