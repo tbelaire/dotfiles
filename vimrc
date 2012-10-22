@@ -67,7 +67,7 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works in MacVim (gui) mode. As of 7.3 it doesn't require gui
-
+" or maybe it doesn't work...
 set undodir=~/.vim/backups
 set undofile
 
@@ -120,21 +120,40 @@ ab beta β
 ab gamma γ
 ab delta δ
 ab epsilon ε
+ab zeta ζ
 ab eta η
 ab theta θ
 ab iota ι
 ab kappa κ
 ab lambda λ
 ab mu μ
+ab nu ν
+ab xi ξ
+ab omicron ο
+ab pi π
+ab rho ρ
 ab sigma σ
+ab tau τ
+ab upsilon υ
+ab phi φ
+ab chi χ
+ab psi ψ
 ab omega ω
 
-ab Psi Ψ
-ab psi ψ
+ab Gamma Γ
+ab Delta Δ
+ab Theta Θ
+ab Lambda Λ
+ab Xi Ξ
+ab Pi Π
+ab Sigma Σ
+ab Upsilon Υ
 ab Phi Φ
-ab phi φ
+ab Psi Ψ
+ab Omega Ω
 
 imap \in ∈
+imap \notin ∉
 imap \subset ⊆
 imap \ssubset ⊂
 imap \cup ∪
@@ -162,6 +181,11 @@ imap \HH ℍ
 imap \QQ ℚ
 
 imap \scriptS 𝒮
+imap \scriptT 𝒯
+
+imap \empty ∅
+
+imap \|-> ↦
 
 imap \subi ᵢ
 imap \sub0 ₀
