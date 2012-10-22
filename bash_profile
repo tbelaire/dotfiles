@@ -14,6 +14,7 @@ function addToPath(){
     PATH="$1:$PATH"
 }
 
+addToPath ~/bin
 
 function sourceDir(){
     for file in *; do  # sets $file to * if empty directory
