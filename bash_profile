@@ -33,6 +33,7 @@ cd $dots
 
 source ~/dotfiles/git-completion.bash
 
+source colours
 source prompt
 sourceDir
 cd $olddir

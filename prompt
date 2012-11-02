@@ -1,18 +1,17 @@
 # prompt
 
+wincolour=$yellow
+errorcolour=$bold$red
 # To provide a coloured version of $?, wrapped in ().  Used in PS1
+# Might want to check out ${PIPESTATUS[*]}
 pretty_exit_code(){
   LAST_COMMAND_STATUS=$?
   if [ $LAST_COMMAND_STATUS = 0 ];
-  then echo -e "\033[33m($LAST_COMMAND_STATUS)\033[0m";
-  else echo -e "\033[31m($LAST_COMMAND_STATUS)\033[0m";
+  then echo -e "$wincolour($LAST_COMMAND_STATUS)$clear";
+  else echo -e "$errorcolour($LAST_COMMAND_STATUS)$clear";
   fi
 }
-lightgreen='\[\e[32;1m\]'
-blue='\[\e[34;1m\]'
-black='\[\e[0m\]'
-yellow='\[\e[33;1m\]'
 
 GIT_PS1_SHOWUPSTREAM="verbose"
 GIT_PS1_SHOWDIRTYSTATE='yes'
-export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(%s)') \n$blue\$ $black"
+export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(%s)') \n$blue\$ $clear"
