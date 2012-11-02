@@ -212,6 +212,8 @@ imap \sup9 ⁹
 
 imap \doublearrow ⇋
 
+imap \QED ∎
+
 " ================= Python ===========================
 "
 " Add the virtualenv's site-packages to vim path
