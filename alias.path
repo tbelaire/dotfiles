@@ -1,2 +1,4 @@
 alias ls='ls -G'
-alias ll="ls -la"
+alias ll='ls -la'
+
+alias gvim='open -a MacVim'
