@@ -182,6 +182,7 @@ imap \QQ ℚ
 
 imap \scriptS 𝒮
 imap \scriptT 𝒯
+imap \scriptP 𝒫
 
 imap \empty ∅
 
