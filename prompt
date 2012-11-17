@@ -14,4 +14,4 @@ pretty_exit_code(){
 
 GIT_PS1_SHOWUPSTREAM="verbose"
 GIT_PS1_SHOWDIRTYSTATE='yes'
-export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(%s)') \n$blue\$ $clear"
+export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(%s)') $clear\n\$ "
