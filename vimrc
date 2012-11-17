@@ -1,14 +1,45 @@
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-" =============== Pathogen Initialization ===============
-" This loads all the plugins in ~/.vim/bundle
-" Use tpope's pathogen plugin to manage all other plugins
+" =============== Vundle Initialization ===============
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" =============== Vundle Packagages ==================
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
 
-runtime bundle/tpope-vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-eunuch'
 
+Bundle 'kien/ctrlp.vim'
+
+Bundle 'Lokaltog/vim-easymotion'
+" Let it use the number keys instead of the alphabet
+let g:EasyMotion_keys = '1234567890'
+
+
+" Testing these out
+" This should have awesome error finding before compiling
+Bundle 'scrooloose/syntastic'
+
+Bundle 'Lokaltog/vim-powerline'
+set laststatus=2                " Always show the statusline
+let g:Powerline_symbols = 'unicode'
+let g:Powerline_theme = 'default'
+
+" Virtualenv stuff
+Bundle 'virtualenv.vim'
+
+" Git stuff
+Bundle 'vim-scripts/fugitive.vim'
+
+" Markdown
+" Doesn't seem to work
+"Bundle 'swaroopch/vim-markdown-preview'
+filetype plugin indent on
 " ================ General Config ====================
 
 set encoding=utf-8              "Use utf-8
