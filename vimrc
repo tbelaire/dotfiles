@@ -27,7 +27,7 @@ Bundle 'scrooloose/syntastic'
 
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2                " Always show the statusline
-let g:Powerline_symbols = 'unicode'
+let g:Powerline_symbols = 'fancy'
 let g:Powerline_theme = 'default'
 
 " Virtualenv stuff
