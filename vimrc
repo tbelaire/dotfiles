@@ -73,6 +73,12 @@ inoremap jj <ESC>
 " *S*ource my *V*imrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" Move between splits with just C-hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " ================ Movement Config  =================
 " Set tab to just to matching paren (not bound before?)
 nnoremap <tab> %
