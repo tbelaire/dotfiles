@@ -1,5 +1,4 @@
 
-olddir=$(pwd)
 
 dots=~/dotfiles
 
@@ -29,15 +28,15 @@ function sourceDir(){
         fi
     done
 }
-cd $dots
+
+pushd $dots > /dev/null
 
 source ~/dotfiles/git-completion.bash
 
 source colours
 source prompt
 sourceDir
-cd $olddir
-
+popd > /dev/null
 
 
 export EDITOR=vim
