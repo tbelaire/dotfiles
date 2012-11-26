@@ -29,3 +29,11 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+echo "Seeing if Vundle is already installed"
+if [ ! -e ~/.vim/bundle/ ]; then # Bundle needs to be installed
+    echo "It needs installing,  getting it from github"
+    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle;
+fi
+
+vim -c "BundleInstall"
