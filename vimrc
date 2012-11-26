@@ -105,8 +105,8 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " Keep undo history across sessions, by storing in file.
 " Only works in MacVim (gui) mode. As of 7.3 it doesn't require gui
 " or maybe it doesn't work...
-set undodir=~/.vim/backups
-set undofile
+"set undodir=~/.vim/backups
+"set undofile
 
 " ================ Indentation ======================
 
