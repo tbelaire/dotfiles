@@ -36,6 +36,9 @@ Bundle 'virtualenv.vim'
 " Git stuff
 Bundle 'vim-scripts/fugitive.vim'
 
+" autocomplete using clang
+Bundle 'clang-complete'
+
 " Markdown
 " Doesn't seem to work
 "Bundle 'swaroopch/vim-markdown-preview'
