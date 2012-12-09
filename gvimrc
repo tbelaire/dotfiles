@@ -5,6 +5,5 @@ Bundle 'Solarized'
 set background=light
 colorscheme Solarized
 
-
-" set guifont=Menlo-ForPowerline:14
+set guifont=Menlo:h14
 
