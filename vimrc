@@ -14,7 +14,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-eunuch'
 
-Bundle 'kien/ctrlp.vim'
+"ctrlp is buggy or something.  Not shoing all my files
+"Bundle 'kien/ctrlp.vim'
+Bundle 'Command-T'
+
 
 Bundle 'Lokaltog/vim-easymotion'
 " Let it use the number keys instead of the alphabet
@@ -84,8 +87,8 @@ nnoremap <C-l> <C-w>l
 
 " ================ Movement Config  =================
 " Set tab to just to matching paren (not bound before?)
-nnoremap <tab> %
-vnoremap <tab> %
+"nnoremap <tab> %
+"vnoremap <tab> %
 
 " ================ Search Settings  =================
 
