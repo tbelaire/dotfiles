@@ -1,0 +1,62 @@
+# File name: going/LaTeX.path
+
+addToPath "/usr/texbin"
+
+#addToPath "/Library/Frameworks/Maple.framework/Versions/Current/etc"
+
+# File name: going/go.path
+
+export GOROOT=/usr/local/Cellar/go/1
+
+
+# File name: going/growl.path
+alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+
+
+# File name: going/haskell.path
+addToPath ~/Library/Haskell/bin
+
+
+# File name: going/node.path
+
+addToPath /usr/local/share/npm/bin
+
+
+# File name: going/pass.path
+source /usr/local/etc/bash_completion.d/password-store
+
+
+# File name: going/racket.path
+addToPath "/Applications/Racket v5.2/bin"
+
+
+# File name: going/ruby19.path
+
+addToPath "/usr/local/Cellar/ruby/1.9.3-p125/bin"
+
+
+# File name: going/rvm.path
+addToPath $HOME/.rvm/bin # Add RVM to PATH for scripting
+( [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm") || e    cho "Couldn't load rvm shell script"
+
+
+# File name: going/vim.path
+# Use the celler vim path which has python support
+addToPath "/usr/local/Cellar/vim/7.3.632/bin/vim"
+
+# Make vi mean vim, I had some trouble  making links to do this
+alias vi=vim
+
+
+# File name: going/virtualenvwrapper.path
+
+export WORKON_HOME=$HOME/.virtualenv
+export PROJECT_HOME=$HOME/Code/Python
+source /usr/local/bin/virtualenvwrapper.sh
+
+# File name: going/z.path
+source `brew --prefix`/etc/profile.d/z.sh
+
+
+# File name: going/brew.path
+addToPath "/usr/local/bin"
