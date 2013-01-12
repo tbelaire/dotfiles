@@ -36,6 +36,7 @@ source ~/dotfiles/git-completion.bash
 source colours
 source prompt
 sourceDir
+
 popd > /dev/null
 
 
