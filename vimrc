@@ -27,6 +27,7 @@ let g:EasyMotion_keys = '1234567890'
 " Testing these out
 " This should have awesome error finding before compiling
 Bundle 'scrooloose/syntastic'
+let g:syntastic_python_checker_args = ''
 
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2                " Always show the statusline
@@ -209,12 +210,16 @@ imap \ox ⊗
 imap \o- ⊖
 imap \o. ⊙
 imap \o/ ⊘
+imap \cdot ⋅
+
 
 imap \trans ᵀ
 imap \bar  ̅
 imap \hat  ̂
 imap \wav  ̃
 imap \under  ̲
+imap \vec  ⃑
+
 
 imap \RR ℝ
 imap \CC ℂ
