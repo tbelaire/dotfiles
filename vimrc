@@ -116,7 +116,6 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 "set undofile
 
 " ================ Indentation ======================
-
 set autoindent
 set smartindent
 set smarttab
@@ -159,109 +158,111 @@ nnoremap j gj
 nnoremap k gk
 
 " ================= Math =============================
-ab alpha α
-ab beta β
-ab gamma γ
-ab delta δ
-ab epsilon ε
-ab zeta ζ
-ab eta η
-ab theta θ
-ab iota ι
-ab kappa κ
-ab lambda λ
-ab mu μ
-ab nu ν
-ab xi ξ
-ab omicron ο
-ab pi π
-ab rho ρ
-ab sigma σ
-ab tau τ
-ab upsilon υ
-ab phi φ
-ab chi χ
-ab psi ψ
-ab omega ω
+function! DoMath()
+    ab alpha α
+    ab beta β
+    ab gamma γ
+    ab delta δ
+    ab epsilon ε
+    ab zeta ζ
+    ab eta η
+    ab theta θ
+    ab iota ι
+    ab kappa κ
+    ab lambda λ
+    ab mu μ
+    ab nu ν
+    ab xi ξ
+    ab omicron ο
+    ab pi π
+    ab rho ρ
+    ab sigma σ
+    ab tau τ
+    ab upsilon υ
+    ab phi φ
+    ab chi χ
+    ab psi ψ
+    ab omega ω
 
-ab Gamma Γ
-ab Delta Δ
-ab Theta Θ
-ab Lambda Λ
-ab Xi Ξ
-ab Pi Π
-ab Sigma Σ
-ab Upsilon Υ
-ab Phi Φ
-ab Psi Ψ
-ab Omega Ω
+    ab Gamma Γ
+    ab Delta Δ
+    ab Theta Θ
+    ab Lambda Λ
+    ab Xi Ξ
+    ab Pi Π
+    ab Sigma Σ
+    ab Upsilon Υ
+    ab Phi Φ
+    ab Psi Ψ
+    ab Omega Ω
 
-imap \in ∈
-imap \notin ∉
-imap \subset ⊆
-imap \ssubset ⊂
-imap \cup ∪
-imap \cap ∩
-imap \forall ∀
-imap \exists ∃
-imap \notexists ∄
-imap \o+ ⊕
-imap \ox ⊗
-imap \o- ⊖
-imap \o. ⊙
-imap \o/ ⊘
-imap \cdot ⋅
-
-
-imap \trans ᵀ
-imap \bar  ̅
-imap \hat  ̂
-imap \wav  ̃
-imap \under  ̲
-imap \vec  ⃑
+    imap \in ∈
+    imap \notin ∉
+    imap \subset ⊆
+    imap \ssubset ⊂
+    imap \cup ∪
+    imap \cap ∩
+    imap \forall ∀
+    imap \exists ∃
+    imap \notexists ∄
+    imap \o+ ⊕
+    imap \ox ⊗
+    imap \o- ⊖
+    imap \o. ⊙
+    imap \o/ ⊘
+    imap \cdot ⋅
 
 
-imap \RR ℝ
-imap \CC ℂ
-imap \NN ℕ
-imap \ZZ ℤ
-imap \HH ℍ
-imap \QQ ℚ
+    imap \trans ᵀ
+    imap \bar  ̅
+    imap \hat  ̂
+    imap \wav  ̃
+    imap \under  ̲
+    imap \vec  ⃑
 
-imap \scriptS 𝒮
-imap \scriptT 𝒯
-imap \scriptP 𝒫
 
-imap \empty ∅
+    imap \RR ℝ
+    imap \CC ℂ
+    imap \NN ℕ
+    imap \ZZ ℤ
+    imap \HH ℍ
+    imap \QQ ℚ
 
-imap \|-> ↦
+    imap \scriptS 𝒮
+    imap \scriptT 𝒯
+    imap \scriptP 𝒫
 
-imap \subi ᵢ
-imap \sub0 ₀
-imap \sub1 ₁
-imap \sub2 ₂
-imap \sub3 ₃
-imap \sub4 ₄
-imap \sub5 ₅
-imap \sub6 ₆
-imap \sub7 ₇
-imap \sub8 ₈
-imap \sub9 ₉
+    imap \empty ∅
 
-imap \sup0 ⁰
-imap \sup1 ¹
-imap \sup2 ²
-imap \sup3 ³
-imap \sup4 ⁴
-imap \sup5 ⁵
-imap \sup6 ⁶
-imap \sup7 ⁷
-imap \sup8 ⁸
-imap \sup9 ⁹
+    imap \|-> ↦
 
-imap \doublearrow ⇋
+    imap \subi ᵢ
+    imap \sub0 ₀
+    imap \sub1 ₁
+    imap \sub2 ₂
+    imap \sub3 ₃
+    imap \sub4 ₄
+    imap \sub5 ₅
+    imap \sub6 ₆
+    imap \sub7 ₇
+    imap \sub8 ₈
+    imap \sub9 ₉
 
-imap \QED ∎
+    imap \sup0 ⁰
+    imap \sup1 ¹
+    imap \sup2 ²
+    imap \sup3 ³
+    imap \sup4 ⁴
+    imap \sup5 ⁵
+    imap \sup6 ⁶
+    imap \sup7 ⁷
+    imap \sup8 ⁸
+    imap \sup9 ⁹
+
+    imap \doublearrow ⇋
+
+    imap \QED ∎
+endfunction
 
 " ================= Python ===========================
 "
