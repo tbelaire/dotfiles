@@ -264,6 +264,8 @@ function! DoMath()
     imap \QED ∎
 endfunction
 
+autocmd BufRead,BufNewFile *.txt :call DoMath()
+autocmd BufRead,BufNewFile *.mdown :call DoMath()
 " ================= Python ===========================
 "
 " Add the virtualenv's site-packages to vim path
