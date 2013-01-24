@@ -159,109 +159,110 @@ nnoremap j gj
 nnoremap k gk
 
 " ================= Math =============================
-ab alpha α
-ab beta β
-ab gamma γ
-ab delta δ
-ab epsilon ε
-ab zeta ζ
-ab eta η
-ab theta θ
-ab iota ι
-ab kappa κ
-ab lambda λ
-ab mu μ
-ab nu ν
-ab xi ξ
-ab omicron ο
-ab pi π
-ab rho ρ
-ab sigma σ
-ab tau τ
-ab upsilon υ
-ab phi φ
-ab chi χ
-ab psi ψ
-ab omega ω
+augroup do_math
+    autocmd!
+    autocmd BufRead,BufNewFile *.txt :ab alpha α
+    autocmd BufRead,BufNewFile *.txt :ab beta β
+    autocmd BufRead,BufNewFile *.txt :ab gamma γ
+    autocmd BufRead,BufNewFile *.txt :ab delta δ
+    autocmd BufRead,BufNewFile *.txt :ab epsilon ε
+    autocmd BufRead,BufNewFile *.txt :ab zeta ζ
+    autocmd BufRead,BufNewFile *.txt :ab eta η
+    autocmd BufRead,BufNewFile *.txt :ab theta θ
+    autocmd BufRead,BufNewFile *.txt :ab iota ι
+    autocmd BufRead,BufNewFile *.txt :ab kappa κ
+    autocmd BufRead,BufNewFile *.txt :ab lambda λ
+    autocmd BufRead,BufNewFile *.txt :ab mu μ
+    autocmd BufRead,BufNewFile *.txt :ab nu ν
+    autocmd BufRead,BufNewFile *.txt :ab xi ξ
+    autocmd BufRead,BufNewFile *.txt :ab omicron ο
+    autocmd BufRead,BufNewFile *.txt :ab pi π
+    autocmd BufRead,BufNewFile *.txt :ab rho ρ
+    autocmd BufRead,BufNewFile *.txt :ab sigma σ
+    autocmd BufRead,BufNewFile *.txt :ab tau τ
+    autocmd BufRead,BufNewFile *.txt :ab upsilon υ
+    autocmd BufRead,BufNewFile *.txt :ab phi φ
+    autocmd BufRead,BufNewFile *.txt :ab chi χ
+    autocmd BufRead,BufNewFile *.txt :ab psi ψ
+    autocmd BufRead,BufNewFile *.txt :ab omega ω
+    
+    autocmd BufRead,BufNewFile *.txt :ab Gamma Γ
+    autocmd BufRead,BufNewFile *.txt :ab Delta Δ
+    autocmd BufRead,BufNewFile *.txt :ab Theta Θ
+    autocmd BufRead,BufNewFile *.txt :ab Lambda Λ
+    autocmd BufRead,BufNewFile *.txt :ab Xi Ξ
+    autocmd BufRead,BufNewFile *.txt :ab Pi Π
+    autocmd BufRead,BufNewFile *.txt :ab Sigma Σ
+    autocmd BufRead,BufNewFile *.txt :ab Upsilon Υ
+    autocmd BufRead,BufNewFile *.txt :ab Phi Φ
+    autocmd BufRead,BufNewFile *.txt :ab Psi Ψ
+    autocmd BufRead,BufNewFile *.txt :ab Omega Ω
+    
+    autocmd BufRead,BufNewFile *.txt :imap \in ∈
+    autocmd BufRead,BufNewFile *.txt :imap \notin ∉
+    autocmd BufRead,BufNewFile *.txt :imap \subset ⊆
+    autocmd BufRead,BufNewFile *.txt :imap \ssubset ⊂
+    autocmd BufRead,BufNewFile *.txt :imap \cup ∪
+    autocmd BufRead,BufNewFile *.txt :imap \cap ∩
+    autocmd BufRead,BufNewFile *.txt :imap \forall ∀
+    autocmd BufRead,BufNewFile *.txt :imap \exists ∃
+    autocmd BufRead,BufNewFile *.txt :imap \notexists ∄
+    autocmd BufRead,BufNewFile *.txt :imap \o+ ⊕
+    autocmd BufRead,BufNewFile *.txt :imap \ox ⊗
+    autocmd BufRead,BufNewFile *.txt :imap \o- ⊖
+    autocmd BufRead,BufNewFile *.txt :imap \o. ⊙
+    autocmd BufRead,BufNewFile *.txt :imap \o/ ⊘
+    autocmd BufRead,BufNewFile *.txt :imap \cdot ⋅
 
-ab Gamma Γ
-ab Delta Δ
-ab Theta Θ
-ab Lambda Λ
-ab Xi Ξ
-ab Pi Π
-ab Sigma Σ
-ab Upsilon Υ
-ab Phi Φ
-ab Psi Ψ
-ab Omega Ω
+    autocmd BufRead,BufNewFile *.txt :imap \trans ᵀ
+    autocmd BufRead,BufNewFile *.txt :imap \bar  ̅
+    autocmd BufRead,BufNewFile *.txt :imap \hat  ̂
+    autocmd BufRead,BufNewFile *.txt :imap \wav  ̃
+    autocmd BufRead,BufNewFile *.txt :imap \under  ̲
+    autocmd BufRead,BufNewFile *.txt :imap \vec  ⃑
+    
+    autocmd BufRead,BufNewFile *.txt :imap \RR ℝ
+    autocmd BufRead,BufNewFile *.txt :imap \CC ℂ
+    autocmd BufRead,BufNewFile *.txt :imap \NN ℕ
+    autocmd BufRead,BufNewFile *.txt :imap \ZZ ℤ
+    autocmd BufRead,BufNewFile *.txt :imap \HH ℍ
+    autocmd BufRead,BufNewFile *.txt :imap \QQ ℚ
 
-imap \in ∈
-imap \notin ∉
-imap \subset ⊆
-imap \ssubset ⊂
-imap \cup ∪
-imap \cap ∩
-imap \forall ∀
-imap \exists ∃
-imap \notexists ∄
-imap \o+ ⊕
-imap \ox ⊗
-imap \o- ⊖
-imap \o. ⊙
-imap \o/ ⊘
-imap \cdot ⋅
+    autocmd BufRead,BufNewFile *.txt :imap \scriptS 𝒮
+    autocmd BufRead,BufNewFile *.txt :imap \scriptT 𝒯
+    autocmd BufRead,BufNewFile *.txt :imap \scriptP 𝒫
 
+    autocmd BufRead,BufNewFile *.txt :imap \empty ∅
 
-imap \trans ᵀ
-imap \bar  ̅
-imap \hat  ̂
-imap \wav  ̃
-imap \under  ̲
-imap \vec  ⃑
+    autocmd BufRead,BufNewFile *.txt :imap \|-> ↦
 
+    autocmd BufRead,BufNewFile *.txt :imap \subi ᵢ
+    autocmd BufRead,BufNewFile *.txt :imap \sub0 ₀
+    autocmd BufRead,BufNewFile *.txt :imap \sub1 ₁
+    autocmd BufRead,BufNewFile *.txt :imap \sub2 ₂
+    autocmd BufRead,BufNewFile *.txt :imap \sub3 ₃
+    autocmd BufRead,BufNewFile *.txt :imap \sub4 ₄
+    autocmd BufRead,BufNewFile *.txt :imap \sub5 ₅
+    autocmd BufRead,BufNewFile *.txt :imap \sub6 ₆
+    autocmd BufRead,BufNewFile *.txt :imap \sub7 ₇
+    autocmd BufRead,BufNewFile *.txt :imap \sub8 ₈
+    autocmd BufRead,BufNewFile *.txt :imap \sub9 ₉
 
-imap \RR ℝ
-imap \CC ℂ
-imap \NN ℕ
-imap \ZZ ℤ
-imap \HH ℍ
-imap \QQ ℚ
+    autocmd BufRead,BufNewFile *.txt :imap \sup0 ⁰
+    autocmd BufRead,BufNewFile *.txt :imap \sup1 ¹
+    autocmd BufRead,BufNewFile *.txt :imap \sup2 ²
+    autocmd BufRead,BufNewFile *.txt :imap \sup3 ³
+    autocmd BufRead,BufNewFile *.txt :imap \sup4 ⁴
+    autocmd BufRead,BufNewFile *.txt :imap \sup5 ⁵
+    autocmd BufRead,BufNewFile *.txt :imap \sup6 ⁶
+    autocmd BufRead,BufNewFile *.txt :imap \sup7 ⁷
+    autocmd BufRead,BufNewFile *.txt :imap \sup8 ⁸
+    autocmd BufRead,BufNewFile *.txt :imap \sup9 ⁹
 
-imap \scriptS 𝒮
-imap \scriptT 𝒯
-imap \scriptP 𝒫
+    autocmd BufRead,BufNewFile *.txt :imap \doublearrow ⇋
 
-imap \empty ∅
-
-imap \|-> ↦
-
-imap \subi ᵢ
-imap \sub0 ₀
-imap \sub1 ₁
-imap \sub2 ₂
-imap \sub3 ₃
-imap \sub4 ₄
-imap \sub5 ₅
-imap \sub6 ₆
-imap \sub7 ₇
-imap \sub8 ₈
-imap \sub9 ₉
-
-imap \sup0 ⁰
-imap \sup1 ¹
-imap \sup2 ²
-imap \sup3 ³
-imap \sup4 ⁴
-imap \sup5 ⁵
-imap \sup6 ⁶
-imap \sup7 ⁷
-imap \sup8 ⁸
-imap \sup9 ⁹
-
-imap \doublearrow ⇋
-
-imap \QED ∎
+    autocmd BufRead,BufNewFile *.txt :imap \QED ∎
+augroup END
 
 " ================= Python ===========================
 "
