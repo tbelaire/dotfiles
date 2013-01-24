@@ -34,6 +34,7 @@ echo "Seeing if Vundle is already installed"
 if [ ! -e ~/.vim/bundle/ ]; then # Bundle needs to be installed
     echo "It needs installing,  getting it from github"
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle;
+    echo Do this
+    echo vim -c "BundleInstall"
 fi
 
-vim -c "BundleInstall"
