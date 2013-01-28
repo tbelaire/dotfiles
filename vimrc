@@ -10,15 +10,21 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
+" Things like ci" for change inside quotes
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+" Unix commands
 Bundle 'tpope/vim-eunuch'
 
-"ctrlp is buggy or something.  Not shoing all my files
+" Extends the keystrokes ga to show more information than just hex
+Bundle 'https://github.com/tpope/vim-characterize'
+" Use s like f, but with 2 characters.
+Bundle 'https://github.com/goldfeld/vim-seek'
+"ctrlp is buggy or something.  Not showing all my files
 "Bundle 'kien/ctrlp.vim'
 Bundle 'Command-T'
 
-
+" \\f to activate
 Bundle 'Lokaltog/vim-easymotion'
 " Let it use the number keys instead of the alphabet
 let g:EasyMotion_keys = '1234567890'
@@ -43,6 +49,8 @@ Bundle 'vim-scripts/fugitive.vim'
 " autocomplete using clang
 Bundle 'clang-complete'
 
+" LaTeX Stuff.  Compile with \ll
+" Bundle 'LaTeX-Box-Team/LaTeX-Box'
 " Markdown
 " Doesn't seem to work
 "Bundle 'swaroopch/vim-markdown-preview'
@@ -156,7 +164,8 @@ set scrolloff=15          "Start scrolling when we're 8 lines away from margins
 " Treat long lines as break lines (useful when moving around in them)
 nnoremap j gj
 nnoremap k gk
-
+" ================= LaTex ============================
+"g:LatexBox_viewer="/Applications/Skim.app/Contents/SharedSupport/displayline -g 0"
 " ================= Math =============================
 function! DoMath()
     ab alpha α
