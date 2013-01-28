@@ -16,4 +16,4 @@ export GIT_PS1_SHOWUPSTREAM="verbose"
 export GIT_PS1_SHOWDIRTYSTATE='yes'
 export GIT_PS1_SHOWSTASHSTATE='yes'
 export GIT_PS1_SHOWUNTRACKEDFILES='yes'
-export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(%s)') $clear\n\$ "
+export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(%s)') $clear\n⚡ "
