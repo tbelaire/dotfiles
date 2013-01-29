@@ -54,6 +54,10 @@ Bundle 'clang-complete'
 " Markdown
 " Doesn't seem to work
 "Bundle 'swaroopch/vim-markdown-preview'
+
+" For racket files
+Bundle 'https://github.com/wlangstroth/vim-racket'
+Bundle 'https://github.com/wlangstroth/vim-haskell'
 filetype plugin indent on
 " ================ General Config ====================
 
