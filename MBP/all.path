@@ -27,7 +27,7 @@ source /usr/local/etc/bash_completion.d/password-store
 
 
 # File name: going/racket.path
-addToPath "/Applications/Racket v5.2/bin"
+addToPath "/Applications/Racket v5.3.1/bin"
 
 
 # File name: going/ruby19.path
