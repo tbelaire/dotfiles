@@ -29,6 +29,10 @@ Bundle 'Lokaltog/vim-easymotion'
 " Let it use the number keys instead of the alphabet
 let g:EasyMotion_keys = '1234567890'
 
+" Line things up
+Bundle 'godlygeek/tabular'
+" Does not work
+"Bundle 'vim-scripts/Align'
 
 " Testing these out
 " This should have awesome error finding before compiling
