@@ -38,6 +38,8 @@ Bundle 'godlygeek/tabular'
 " This should have awesome error finding before compiling
 Bundle 'scrooloose/syntastic'
 let g:syntastic_python_checker_args = ''
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2                " Always show the statusline
