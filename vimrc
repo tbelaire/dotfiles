@@ -108,6 +108,11 @@ nnoremap <C-l> <C-w>l
 " Set tab to just to matching paren (not bound before?)
 "nnoremap <tab> %
 "vnoremap <tab> %
+"
+" Select and shift arrow keys work as 'normal' or nonvimily
+if has("gui_macvim")
+    let macvim_hig_shift_movement = 1
+endif
 
 " ================ Search Settings  =================
 
