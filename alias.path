@@ -1,4 +1,4 @@
 alias ls='ls -G'
 alias ll='ls -la'
 
-alias gvim='open -a MacVim'
+alias gvim='mvim -f -c "au VimLeave * maca hide:"'
