@@ -51,6 +51,8 @@ Bundle 'virtualenv.vim'
 
 " Git stuff
 Bundle 'vim-scripts/fugitive.vim'
+" Tells you about changes
+Bundle 'airblade/vim-gitgutter'
 
 " autocomplete using clang
 Bundle 'clang-complete'
