@@ -44,5 +44,7 @@ export EDITOR=vim
 # Ignore line that start with spaces, and duplicate lines
 export HISTCONTROL=ignoreboth
 
-
+if [ $TERM == "screen" ]; then
+    TERM=screen-256color
+fi
 
