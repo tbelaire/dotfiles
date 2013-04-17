@@ -172,7 +172,7 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 
 " ================ Scrolling ========================
 
-set scrolloff=15          "Start scrolling when we're 8 lines away from margins
+set scrolloff=8          "Start scrolling when we're 8 lines away from margins
 "Yes wrap lines, so this is not needed
 "set sidescrolloff=1
 "set sidescroll=1
