@@ -2,3 +2,10 @@ alias ls='ls -G'
 alias ll='ls -la'
 
 alias gvim='mvim -f -c "au VimLeave * maca hide:"'
+
+alias latexmk='latexmk -pdf -pvc'
+
+# For httpie
+function httpl {
+    http --pretty all "$*" | less -r
+}
