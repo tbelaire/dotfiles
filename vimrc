@@ -10,19 +10,27 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 
+" Colours!
+Bundle 'Solarized'
 " Things like ci" for change inside quotes
+" Or cst" for change surrounding <tag> to quotes
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
+" gcc to comment a line, gcu to uncomment
+Bundle 'tpope/vim-commentary'
+
+Bundle 'tpope/vim-fugitive'
 " Unix commands
-Bundle 'tpope/vim-eunuch'
+" Bundle 'tpope/vim-eunuch'
 
 " Extends the keystrokes ga to show more information than just hex
-Bundle 'https://github.com/tpope/vim-characterize'
+Bundle 'tpope/vim-characterize'
 " Use s like f, but with 2 characters.
+" Might want to make it not conflict with surround's s
 Bundle 'https://github.com/goldfeld/vim-seek'
 "ctrlp is buggy or something.  Not showing all my files
-"Bundle 'kien/ctrlp.vim'
-Bundle 'Command-T'
+Bundle 'kien/ctrlp.vim'
+"Bundle 'Command-T'
 
 " \\f to activate
 Bundle 'Lokaltog/vim-easymotion'
@@ -49,8 +57,6 @@ let g:Powerline_theme = 'default'
 " Virtualenv stuff
 Bundle 'virtualenv.vim'
 
-" Git stuff
-Bundle 'vim-scripts/fugitive.vim'
 " Tells you about changes
 Bundle 'airblade/vim-gitgutter'
 
@@ -66,6 +72,10 @@ Bundle 'clang-complete'
 " For racket files
 Bundle 'https://github.com/wlangstroth/vim-racket'
 Bundle 'https://github.com/wlangstroth/vim-haskell'
+
+" Co-operative vim
+" Kinda buggy
+Bundle 'FredKSchott/CoVim'
 filetype plugin indent on
 " ================ General Config ====================
 
