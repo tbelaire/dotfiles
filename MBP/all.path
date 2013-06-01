@@ -57,8 +57,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 # File name: brew.path
 addToPath "/usr/local/bin"
 
-# File name: z.path
-source `brew --prefix`/etc/profile.d/z.sh
 
 # Extra bash completions from homebrew
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
