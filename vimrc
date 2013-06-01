@@ -25,6 +25,8 @@ Bundle 'tpope/vim-fugitive'
 
 " Extends the keystrokes ga to show more information than just hex
 Bundle 'tpope/vim-characterize'
+" cr{s,c,m,u} for CoeRce to snake_case, camelCase, MixedCase, UPPER_CASE
+Bundle 'tpope/vim-abolish'
 " Use s like f, but with 2 characters.
 " Might want to make it not conflict with surround's s
 Bundle 'https://github.com/goldfeld/vim-seek'
