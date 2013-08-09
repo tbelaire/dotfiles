@@ -2,8 +2,9 @@
 
 Bundle 'Solarized'
 
-set background=light
-colorscheme Solarized
+"set background=dark
+"colorscheme Solarized
+colorscheme Earthsong
 
 set guifont=Menlo:h14
 

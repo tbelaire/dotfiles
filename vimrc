@@ -12,6 +12,8 @@ Bundle 'gmarik/vundle'
 
 " Colours!
 Bundle 'Solarized'
+Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+
 " Things like ci" for change inside quotes
 " Or cst" for change surrounding <tag> to quotes
 Bundle 'tpope/vim-surround'
@@ -40,6 +42,7 @@ Bundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_keys = '1234567890'
 
 " Line things up
+" Need to learn how to use
 Bundle 'godlygeek/tabular'
 " Does not work
 "Bundle 'vim-scripts/Align'
@@ -73,11 +76,33 @@ Bundle 'clang-complete'
 
 " For racket files
 Bundle 'https://github.com/wlangstroth/vim-racket'
-Bundle 'https://github.com/wlangstroth/vim-haskell'
+
+" Haskell Fun stuff
+Bundle 'lukerandall/haskellmode-vim'
+" If you want to highlight delimiter characters (useful if you have a
+" light-coloured background), add to your .vimrc: >
+let hs_highlight_delimiters = 1
+" To treat True and False as keywords as opposed to ordinary
+" identifiers,
+let hs_highlight_boolean = 1
+
+au BufEnter *.hs compiler ghc
+let g:haddock_browser="open -a Google\ Chrome"
+
+"Displaying the type of sub-expressions (ghc-mod type)
+"Displaying error/warning messages and their locations (ghc-mod check and ghc-mod lint)
+"Displaying the expansion of splices (ghc-mod expand)
+Bundle 'eagletmt/ghcmod-vim'
+
+" Pre-requisite for the above
+Bundle 'Shougo/vimproc.vim'
+" It also has some makefile that must be run
+" Annoying
+Bundle 'eagletmt/tinytest'
 
 " Co-operative vim
 " Kinda buggy
-Bundle 'FredKSchott/CoVim'
+" Bundle 'FredKSchott/CoVim'
 filetype plugin indent on
 " ================ General Config ====================
 
@@ -108,7 +133,7 @@ set ruler
 inoremap jj <ESC>
 
 " *E*dit my *V*imrc in a split
-:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap <leader>ev :split $MYVIMRC<cr>
 " *S*ource my *V*imrc
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
@@ -117,11 +142,14 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+" ================ Copy & Paste =====================
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
 
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 " ================ Movement Config  =================
-" Set tab to just to matching paren (not bound before?)
-"nnoremap <tab> %
-"vnoremap <tab> %
 "
 " Select and shift arrow keys work as 'normal' or nonvimily
 if has("gui_macvim")
