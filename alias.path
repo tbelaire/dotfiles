@@ -1,6 +1,6 @@
 alias ls='ls -G'
 alias ll='ls -la'
-
+alias ssh='ssh -l tbelaire'
 alias gvim='mvim -f -c "au VimLeave * maca hide:"'
 
 alias latexmk='latexmk -pdf -pvc'
