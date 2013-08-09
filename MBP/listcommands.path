@@ -6,7 +6,7 @@ if [[ ${hpwd%% *} == "cd" ]];
 	then cwd=$OLDPWD; else cwd=$PWD; 
 fi; 
 hpwd="$cwd $hpwd";
-echo "$hpwd" >> ~/.lc_history;'
+echo "$hpwd" >> ~/.lc_history;'"$PROMPT_COMMAND"
 
 function lc() {
 	echo List commands run in $PWD
