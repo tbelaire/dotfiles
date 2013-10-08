@@ -47,12 +47,12 @@ Bundle 'godlygeek/tabular'
 " Does not work
 "Bundle 'vim-scripts/Align'
 
-" Testing these out
 " This should have awesome error finding before compiling
-Bundle 'scrooloose/syntastic'
-let g:syntastic_python_checker_args = ''
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
+" Doesn't work well with cs350.  Fix?
+" Bundle 'scrooloose/syntastic'
+" let g:syntastic_python_checker_args = ''
+" let g:syntastic_error_symbol='✗'
+" let g:syntastic_warning_symbol='⚠'
 
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2                " Always show the statusline
@@ -67,9 +67,19 @@ Bundle 'airblade/vim-gitgutter'
 
 " autocomplete using clang
 Bundle 'clang-complete'
+" autocoomplete using ctags
+" Doesn't seem to work
+"Bundle 'code_complete'
+
+" Tag browser
+Bundle 'vim-scripts/taglist.vim'
+" Autobuilds builds ctags files
+Bundle 'vim-misc'
+" Bundle 'xolox/vim-easytags'
 
 " LaTeX Stuff.  Compile with \ll
 " Bundle 'LaTeX-Box-Team/LaTeX-Box'
+
 " Markdown
 " Doesn't seem to work
 "Bundle 'swaroopch/vim-markdown-preview'
