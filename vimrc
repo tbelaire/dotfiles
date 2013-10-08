@@ -110,6 +110,9 @@ Bundle 'Shougo/vimproc.vim'
 " Annoying
 Bundle 'eagletmt/tinytest'
 
+Bundle 'tex_autoclose.vim'
+" Pair prograimming
+" Bundle 'Floobits/floobits-vim'
 " Co-operative vim
 " Kinda buggy
 " Bundle 'FredKSchott/CoVim'
@@ -281,6 +284,7 @@ function! DoMath()
     imap \forall ∀
     imap \exists ∃
     imap \notexists ∄
+    imap \cross ×
     imap \o+ ⊕
     imap \ox ⊗
     imap \o- ⊖
@@ -334,6 +338,8 @@ function! DoMath()
     imap \sup7 ⁷
     imap \sup8 ⁸
     imap \sup9 ⁹
+
+    imap \iv ⁻¹
 
     imap \doublearrow ⇋
 
