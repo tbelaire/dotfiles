@@ -18,7 +18,7 @@ export GIT_PS1_SHOWSTASHSTATE='yes'
 export GIT_PS1_SHOWUNTRACKEDFILES='yes'
 export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(%s)') $clear\n⚡ "
 
-if which -s brew; then
+if which brew 2>&1 > /dev/null; then
     # Fix the z command
     source `brew --prefix`/etc/profile.d/z.sh
 fi
