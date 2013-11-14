@@ -18,7 +18,7 @@ function sourceDir(){
     for file in *; do  # sets $file to * if empty directory
         #echo "saw $file";
         if [ -d $file ] && 
-            [ $(hostname) = $file -o  $(dnsdomainname) = $file  ]; then
+            [ $(hostname) = $file ]; then
             #echo "Recursing into $file";
             cd $file;
             sourceDir $file;
