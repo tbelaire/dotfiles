@@ -39,6 +39,9 @@ Bundle 'kien/ctrlp.vim'
 " File tray
 Bundle 'scrooloose/nerdtree'
 
+" gui undo
+Bundle 'sjl/gundo.vim'
+
 " \\f to activate
 Bundle 'Lokaltog/vim-easymotion'
 " Let it use the number keys instead of the alphabet
@@ -88,6 +91,9 @@ Bundle 'vim-misc'
 " Doesn't seem to work
 "Bundle 'swaroopch/vim-markdown-preview'
 
+" For python
+" TODO find out what it does
+Bundle 'klen/python-mode'
 " For racket files
 Bundle 'https://github.com/wlangstroth/vim-racket'
 
