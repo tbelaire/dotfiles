@@ -36,6 +36,9 @@ Bundle 'https://github.com/goldfeld/vim-seek'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Command-T'
 
+" File tray
+Bundle 'scrooloose/nerdtree'
+
 " \\f to activate
 Bundle 'Lokaltog/vim-easymotion'
 " Let it use the number keys instead of the alphabet
@@ -67,6 +70,7 @@ Bundle 'airblade/vim-gitgutter'
 
 " autocomplete using clang
 Bundle 'clang-complete'
+let g:clang_user_options='|| exit 0'
 " autocoomplete using ctags
 " Doesn't seem to work
 "Bundle 'code_complete'
@@ -174,9 +178,10 @@ endif
 set incsearch        "Find the next match as we type the search
 set hlsearch         "Hilight searches by default
 set gdefault         "Default is now to chang all occurences on a line
-" Use normal regexs, not vim ones
-nnoremap / /\v
-vnoremap / /\v
+" --Use normal regexs, not vim ones--
+" Actually search for + and so on, instead of having to escape it
+"nnoremap / /\v
+"vnoremap / /\v
 " Set <leader><space> to clear the search and highlighting
 nnoremap <leader><space> :noh<cr>
 set viminfo='100,f1  "Save up to 100 marks, enable capital marks
@@ -206,7 +211,8 @@ filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+" set list listchars=tab:\ \ ,trail:·
+" set list listchars=tab:\ \ ,trail:·
 
 set wrap       "Yes wrap lines
 set linebreak    "Wrap lines at convenient points
@@ -234,7 +240,7 @@ set scrolloff=8          "Start scrolling when we're 8 lines away from margins
 " Treat long lines as break lines (useful when moving around in them)
 nnoremap j gj
 nnoremap k gk
-" ================= LaTex ============================
+" ================= LaTeX ============================
 "g:LatexBox_viewer="/Applications/Skim.app/Contents/SharedSupport/displayline -g 0"
 " ================= Math =============================
 function! DoMath()
