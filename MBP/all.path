@@ -42,7 +42,7 @@ addToPath $HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # File name: vim.path
 # Use the celler vim path which has python support
-addToPath "/usr/local/Cellar/vim/7.3.632/bin/vim"
+# addToPath "/usr/local/Cellar/vim/7.3.632/bin/vim"
 
 # Make vi mean vim, I had some trouble  making links to do this
 alias vi=vim
@@ -57,7 +57,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # File name: brew.path
 addToPath "/usr/local/bin"
-
+addToPath "/usr/local/sbin"
 
 # Extra bash completions from homebrew
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
