@@ -93,7 +93,7 @@ Bundle 'vim-misc'
 
 " For python
 " TODO find out what it does
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 " For racket files
 Bundle 'https://github.com/wlangstroth/vim-racket'
 
@@ -217,8 +217,7 @@ filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-" set list listchars=tab:\ \ ,trail:·
-" set list listchars=tab:\ \ ,trail:·
+set listchars=tab:\ \ ,trail:·
 
 set wrap       "Yes wrap lines
 set linebreak    "Wrap lines at convenient points
