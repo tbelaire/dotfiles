@@ -42,6 +42,15 @@ Bundle 'scrooloose/nerdtree'
 " gui undo
 Bundle 'sjl/gundo.vim'
 
+" Completely changes the clipboard
+" old d is now m,
+" d now doesn't copy
+" s is a command to delete and then paste, 
+" ex.  sw deletes a word and pastes a new one
+" after a p, you can use c-n and c-p to change it
+" to the older or newer yank
+Bundle 'svermeulen/vim-easyclip'
+
 " \\f to activate
 Bundle 'Lokaltog/vim-easymotion'
 " Let it use the number keys instead of the alphabet
