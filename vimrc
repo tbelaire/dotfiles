@@ -64,28 +64,25 @@ Bundle 'godlygeek/tabular'
 
 " This should have awesome error finding before compiling
 " Doesn't work well with cs350.  Fix?
-" Bundle 'scrooloose/syntastic'
-" let g:syntastic_python_checker_args = ''
-" let g:syntastic_error_symbol='✗'
-" let g:syntastic_warning_symbol='⚠'
+"let g:syntastic_python_checker_args = ''
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
 
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2                " Always show the statusline
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_theme = 'default'
 
-" Virtualenv stuff
-Bundle 'virtualenv.vim'
-
 " Tells you about changes
 Bundle 'airblade/vim-gitgutter'
 
 " autocomplete using clang
-Bundle 'clang-complete'
-let g:clang_user_options='|| exit 0'
+" Bundle 'clang-complete'
+" let g:clang_user_options='|| exit 0'
 " autocoomplete using ctags
 " Doesn't seem to work
 "Bundle 'code_complete'
+Bundle 'Valloric/YouCompleteMe'
 
 " Tag browser
 Bundle 'vim-scripts/taglist.vim'
@@ -229,7 +226,11 @@ set viminfo='100,f1  "Save up to 100 marks, enable capital marks
 vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 
-
+" ================ Typos of Commands ================
+command Wq wq
+command WQ wq
+command W w
+command Q q
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works in MacVim (gui) mode. As of 7.3 it doesn't require gui
@@ -391,7 +392,7 @@ function! DoMath()
 endfunction
 
 autocmd BufRead,BufNewFile *.txt :call DoMath()
-autocmd BufRead,BufNewFile *.mdown :call DoMath()
+" autocmd BufRead,BufNewFile *.mdown :call DoMath()
 " ================= Python ===========================
 "
 " Add the virtualenv's site-packages to vim path
