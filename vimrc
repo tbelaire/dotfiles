@@ -93,8 +93,7 @@ Bundle 'vim-scripts/taglist.vim'
 Bundle 'vim-misc'
 " Bundle 'xolox/vim-easytags'
 
-" LaTeX Stuff.  Compile with \ll
-" Bundle 'LaTeX-Box-Team/LaTeX-Box'
+" ============= Language specific stuff ===============
 
 " Markdown
 " Doesn't seem to work
@@ -102,34 +101,59 @@ Bundle 'vim-misc'
 
 " For python
 " TODO find out what it does
+" It highlights eol whitespace while I'm typing
 "Bundle 'klen/python-mode'
+" Virtualenv stuff
+Bundle 'virtualenv.vim'
+
 " For racket files
 Bundle 'https://github.com/wlangstroth/vim-racket'
 
 " Haskell Fun stuff
+" Alternate haskell mode stuff
+if 1
+    Bundle 'bitc/vim-hdevtools'
+else
 Bundle 'lukerandall/haskellmode-vim'
-" If you want to highlight delimiter characters (useful if you have a
-" light-coloured background), add to your .vimrc: >
-let hs_highlight_delimiters = 1
-" To treat True and False as keywords as opposed to ordinary
-" identifiers,
-let hs_highlight_boolean = 1
+    " If you want to highlight delimiter characters (useful if you have a
+    " light-coloured background), add to your .vimrc: >
+    " let hs_highlight_delimiters = 1
+    " To treat True and False as keywords as opposed to ordinary
+    " identifiers,
+    let hs_highlight_boolean = 1
 
-au BufEnter *.hs compiler ghc
-let g:haddock_browser="open -a Google\ Chrome"
+    au BufEnter *.hs compiler ghc
+    let g:haddock_browser="open -a Google\ Chrome"
 
-"Displaying the type of sub-expressions (ghc-mod type)
-"Displaying error/warning messages and their locations (ghc-mod check and ghc-mod lint)
-"Displaying the expansion of splices (ghc-mod expand)
-Bundle 'eagletmt/ghcmod-vim'
+    "Displaying the type of sub-expressions (ghc-mod type)
+    "Displaying error/warning messages and their locations (ghc-mod check and ghc-mod lint)
+    "Displaying the expansion of splices (ghc-mod expand)
+    " Bundle 'eagletmt/ghcmod-vim'
 
-" Pre-requisite for the above
-Bundle 'Shougo/vimproc.vim'
-" It also has some makefile that must be run
-" Annoying
-Bundle 'eagletmt/tinytest'
+    " Pre-requisite for the above
+    " Bundle 'Shougo/vimproc.vim'
+    " It also has some makefile that must be run
+    " Annoying
+    " Bundle 'eagletmt/tinytest'
+endif
 
+" For Coq
+Bundle 'def-lkb/vimbufsync'
+Bundle 'trefis/coquille'
+au FileType coq call coquille#FNMapping()
+" Maps Coquille commands to <F2> (Undo), <F3> (Next), <F4> (ToCursor)
+
+
+
+
+
+" LaTeX Stuff.  Compile with \ll
+" Bundle 'LaTeX-Box-Team/LaTeX-Box'
+"
+" For TeX
 Bundle 'tex_autoclose.vim'
+
+
 " Pair prograimming
 " Bundle 'Floobits/floobits-vim'
 " Co-operative vim

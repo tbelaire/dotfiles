@@ -15,6 +15,7 @@ alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 # File name: haskell.path
 addToPath ~/Library/Haskell/bin
+addToPath ~/.cabal/bin
 
 
 # File name: node.path
