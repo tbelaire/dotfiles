@@ -31,6 +31,9 @@ Bundle 'gregsexton/gitv'
 " Unix commands
 " Bundle 'tpope/vim-eunuch'
 
+" Working with ag
+Bundle 'rking/ag.vim'
+
 " Extends the keystrokes ga to show more information than just hex
 Bundle 'tpope/vim-characterize'
 " cr{s,c,m,u} for CoeRce to snake_case, camelCase, MixedCase, UPPER_CASE
@@ -39,7 +42,7 @@ Bundle 'tpope/vim-abolish'
 " Might want to make it not conflict with surround's s
 Bundle 'https://github.com/goldfeld/vim-seek'
 "ctrlp is buggy or something.  Not showing all my files
-Bundle 'kien/ctrlp.vim'
+"Bundle 'kien/ctrlp.vim'
 "Bundle 'Command-T'
 
 " File tray
@@ -55,12 +58,12 @@ Bundle 'sjl/gundo.vim'
 " ex.  sw deletes a word and pastes a new one
 " after a p, you can use c-n and c-p to change it
 " to the older or newer yank
-Bundle 'svermeulen/vim-easyclip'
+" Bundle 'svermeulen/vim-easyclip'
 
 " \\f to activate
-Bundle 'Lokaltog/vim-easymotion'
+" Bundle 'Lokaltog/vim-easymotion'
 " Let it use the number keys instead of the alphabet
-let g:EasyMotion_keys = '1234567890'
+" let g:EasyMotion_keys = '1234567890'
 
 " Line things up
 " Need to learn how to use
@@ -68,9 +71,10 @@ Bundle 'godlygeek/tabular'
 " Does not work
 "Bundle 'vim-scripts/Align'
 
+Bundle 'Syntastic'
 " This should have awesome error finding before compiling
-" Doesn't work well with cs350.  Fix?
-"let g:syntastic_python_checker_args = ''
+" let g:syntastic_python_checker_args = ''
+let g:syntastic_python_checkers=['pep8']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
@@ -79,21 +83,22 @@ set laststatus=2                " Always show the statusline
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_theme = 'default'
 
-" Tells you about changes
-Bundle 'airblade/vim-gitgutter'
-
 " autocomplete using clang
 " Bundle 'clang-complete'
 " let g:clang_user_options='|| exit 0'
 " autocoomplete using ctags
 " Doesn't seem to work
 "Bundle 'code_complete'
-Bundle 'Valloric/YouCompleteMe'
+
+
+" Bundle 'Valloric/YouCompleteMe'
+
+" autocomplete using clang
 
 " Tag browser
 Bundle 'vim-scripts/taglist.vim'
 " Autobuilds builds ctags files
-Bundle 'vim-misc'
+" Bundle 'vim-misc'
 " Bundle 'xolox/vim-easytags'
 
 " ============= Language specific stuff ===============
@@ -109,21 +114,31 @@ Bundle 'vim-misc'
 " Virtualenv stuff
 Bundle 'virtualenv.vim'
 
+Bundle 'hynek/vim-python-pep8-indent'
+
 " For racket files
 Bundle 'https://github.com/wlangstroth/vim-racket'
 
 " Haskell Fun stuff
 " Alternate haskell mode stuff
+
 if 1
     Bundle 'bitc/vim-hdevtools'
+    au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+    au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+    au FileType haskell command! Type HdevtoolsType
+    " example of how to pass options to ghc
+    " let g:hdevtools_options = '-g-isrc -g-Wall'
+    " TODO make it only write the command once 
 else
-Bundle 'lukerandall/haskellmode-vim'
+    Bundle 'lukerandall/haskellmode-vim'
     " If you want to highlight delimiter characters (useful if you have a
     " light-coloured background), add to your .vimrc: >
     " let hs_highlight_delimiters = 1
     " To treat True and False as keywords as opposed to ordinary
     " identifiers,
     let hs_highlight_boolean = 1
+    let hs_allow_hash_operator = 1
 
     au BufEnter *.hs compiler ghc
     let g:haddock_browser="open -a Google\ Chrome"
