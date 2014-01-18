@@ -20,6 +20,8 @@ export PS1="\$(pretty_exit_code)$lightgreen\u@\h:$blue\w $yellow \$(__git_ps1 '(
 
 if which brew 2>&1 > /dev/null; then
     # Fix the z command
-    source `brew --prefix`/etc/profile.d/z.sh
+    # source `brew --prefix`/etc/profile.d/z.sh
+    # I use autojump instead now
+    [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 fi
 
