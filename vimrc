@@ -22,6 +22,12 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 
 Bundle 'tpope/vim-fugitive'
+
+" Tells you about changes
+Bundle 'airblade/vim-gitgutter'
+
+Bundle 'gregsexton/gitv'
+
 " Unix commands
 " Bundle 'tpope/vim-eunuch'
 
