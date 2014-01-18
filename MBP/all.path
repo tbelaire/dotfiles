@@ -38,12 +38,8 @@ addToPath "/usr/local/Cellar/ruby/1.9.3-p125/bin"
 
 # File name: rvm.path
 addToPath $HOME/.rvm/bin # Add RVM to PATH for scripting
-( [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm") || e    cho "Couldn't load rvm shell script"
+( [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm") || echo "Couldn't load rvm shell script"
 
-
-# File name: vim.path
-# Use the celler vim path which has python support
-# addToPath "/usr/local/Cellar/vim/7.3.632/bin/vim"
 
 # Make vi mean vim, I had some trouble  making links to do this
 alias vi=vim
