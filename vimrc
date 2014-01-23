@@ -42,7 +42,7 @@ Bundle 'tpope/vim-abolish'
 " Might want to make it not conflict with surround's s
 Bundle 'https://github.com/goldfeld/vim-seek'
 "ctrlp is buggy or something.  Not showing all my files
-"Bundle 'kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 "Bundle 'Command-T'
 
 " File tray
