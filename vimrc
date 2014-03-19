@@ -7,21 +7,37 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " =============== Vundle Packagages ==================
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " Colours!
 Bundle 'Solarized'
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 
+" Tabs?
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
+noremap <C-TAB>   :MBEbn<CR>
+noremap <C-S-TAB> :MBEbp<CR>
+"
+" Or, in MRU fashion
+"
+noremap <A-S-TAB>   :MBEbf<CR>
+noremap <A-TAB> :MBEbb<CR>
+
 " Things like ci" for change inside quotes
 " Or cst" for change surrounding <tag> to quotes
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 " gcc to comment a line, gcu to uncomment
-Bundle 'tpope/vim-commentary'
+" I forked to remove \\ as comment
+Bundle 'tbelaire/vim-commentary'
+
+" TODO add mappings
+Bundle 'tpope/vim-unimpaired'
 
 Bundle 'tpope/vim-fugitive'
+" Remove buffers once you move away
+" autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " Tells you about changes
 Bundle 'airblade/vim-gitgutter'
@@ -31,6 +47,8 @@ Bundle 'gregsexton/gitv'
 " Unix commands
 " Bundle 'tpope/vim-eunuch'
 
+" W! to sudo then write
+Bundle 'gmarik/sudo-gui.vim'
 " Working with ag
 Bundle 'rking/ag.vim'
 
@@ -38,9 +56,9 @@ Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-characterize'
 " cr{s,c,m,u} for CoeRce to snake_case, camelCase, MixedCase, UPPER_CASE
 Bundle 'tpope/vim-abolish'
-" Use s like f, but with 2 characters.
-" Might want to make it not conflict with surround's s
-Bundle 'https://github.com/goldfeld/vim-seek'
+" s{char}{char}, jump to cc, ; to repeat, ^O to return to start
+" Operator is z
+Bundle 'justinmk/vim-sneak'
 "ctrlp is buggy or something.  Not showing all my files
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Command-T'
@@ -54,7 +72,7 @@ Bundle 'sjl/gundo.vim'
 " Completely changes the clipboard
 " old d is now m,
 " d now doesn't copy
-" s is a command to delete and then paste, 
+" s is a command to delete and then paste,
 " ex.  sw deletes a word and pastes a new one
 " after a p, you can use c-n and c-p to change it
 " to the older or newer yank
@@ -67,17 +85,35 @@ Bundle 'sjl/gundo.vim'
 
 " Line things up
 " Need to learn how to use
-Bundle 'godlygeek/tabular'
+" Bundle 'godlygeek/tabular'
 " Does not work
 "Bundle 'vim-scripts/Align'
 
 Bundle 'Syntastic'
 " This should have awesome error finding before compiling
 " let g:syntastic_python_checker_args = ''
+set colorcolumn=80
 let g:syntastic_python_checkers=['pep8']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
+" NEWer
+" Bundle 'bling/vim-airline'
+" " let g:airline_powerline_fonts = 1
+"   if !exists('g:airline_symbols')
+"     let g:airline_symbols = {}
+"   endif
+
+"   " unicode symbols
+"   let g:airline_left_sep = ''
+"   let g:airline_right_sep = ''
+"   let g:airline_symbols.linenr = '¶'
+"   let g:airline_symbols.branch = '⎇'
+"   let g:airline_symbols.paste = 'ρ'
+"   let g:airline_symbols.paste = 'Þ'
+"   let g:airline_symbols.whitespace = 'Ξ'
+
+"   let g:airline#extensions#hunks#enabled = 1
 Bundle 'Lokaltog/vim-powerline'
 set laststatus=2                " Always show the statusline
 let g:Powerline_symbols = 'fancy'
@@ -96,10 +132,16 @@ let g:Powerline_theme = 'default'
 " autocomplete using clang
 
 " Tag browser
-Bundle 'vim-scripts/taglist.vim'
+" Bundle 'vim-scripts/taglist.vim' " Lets try something more modern
+Bundle 'majutsushi/tagbar'
+nnoremap \t :TagbarToggle<CR>
 " Autobuilds builds ctags files
 " Bundle 'vim-misc'
 " Bundle 'xolox/vim-easytags'
+
+" Find stdlib help in dash
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 " ============= Language specific stuff ===============
 
@@ -123,13 +165,30 @@ Bundle 'https://github.com/wlangstroth/vim-racket'
 " Alternate haskell mode stuff
 
 if 1
+    function! s:FindCabalSandbox()
+       let l:sandbox    = finddir('.cabal-sandbox', './;../')
+       let l:absSandbox = fnamemodify(l:sandbox, ':p')
+       return l:absSandbox
+    endfunction
+
+    function! s:FindCabalSandboxPackageConf()
+       return glob(s:FindCabalSandbox() . '*-packages.conf.d')
+    endfunction
+
+    function! s:HaskellSourceDir()
+       return fnamemodify(s:FindCabalSandbox(), ':h:h') . '/src'
+    endfunction
+
+    let g:hdevtools_options  = '-g-package-conf=' . s:FindCabalSandboxPackageConf()
+    let g:hdevtools_options .= ' ' . '-g-i' . s:HaskellSourceDir()
+    
     Bundle 'bitc/vim-hdevtools'
     au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
     au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
     au FileType haskell command! Type HdevtoolsType
     " example of how to pass options to ghc
     " let g:hdevtools_options = '-g-isrc -g-Wall'
-    " TODO make it only write the command once 
+    " TODO make it only write the command once
 else
     Bundle 'lukerandall/haskellmode-vim'
     " If you want to highlight delimiter characters (useful if you have a
@@ -163,8 +222,6 @@ au FileType coq call coquille#FNMapping()
 
 
 
-
-
 " LaTeX Stuff.  Compile with \ll
 " Bundle 'LaTeX-Box-Team/LaTeX-Box'
 "
@@ -177,6 +234,11 @@ Bundle 'tex_autoclose.vim'
 " Co-operative vim
 " Kinda buggy
 " Bundle 'FredKSchott/CoVim'
+
+" dd will not store into the default reguster if it's
+" an empty line I delete
+nnoremap <expr> dd match(getline('.'), '^\s*$') == -1 ? 'dd' : '"_dd'
+
 filetype plugin indent on
 " ================ General Config ====================
 
@@ -191,7 +253,7 @@ set showmode                    "Show current mode down the bottom
 set autoread                    "Reload files changed outside vim
 
 " This makes vim act like all other editors, buffers can
-" exist in the background without being in a window. 
+" exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
@@ -230,6 +292,9 @@ if has("gui_macvim")
     let macvim_hig_shift_movement = 1
 endif
 
+nnoremap d] :GitGutterNextHunk<CR>
+nnoremap d[ :GitGutterPrevHunk<CR>
+
 " ================ Search Settings  =================
 
 set incsearch        "Find the next match as we type the search
@@ -261,7 +326,7 @@ command Q q
 
 " ================ Indentation ======================
 set autoindent
-set smartindent
+" set smartindent
 set smarttab
 set shiftwidth=4
 set softtabstop=4

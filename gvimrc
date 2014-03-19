@@ -6,5 +6,6 @@ Bundle 'Solarized'
 "colorscheme Solarized
 colorscheme Earthsong
 
-set guifont=Menlo:h14
-
+" set guifont=*
+" to bring up a picker
+set guifont=Fantasque\ Sans\ Mono:h14,Source\ Code\ Pro:h18,Menlo:h14
