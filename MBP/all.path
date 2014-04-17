@@ -61,8 +61,18 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-## Open NI images stuff
+# Autocomplete GHC commands
+declare -a version=($(ghc --version | grep -Eo '[0-9]+'))
+if [[ ${version[0]} == 7 && ${version[1]} -ge 8 || ${version[0]}  -ge 8 ]];
+then
+    _ghc()
+    {
+        local envs=`ghc --show-options`
+        # get the word currently being completed
+    local cur=${COMP_WORDS[$COMP_CWORD]}
 
-export OPENNI2_INCLUDE=/Users/theobelaire/Code/Tools/OpenNI-2.1.0/Include
-export OPENNI2_REDIST=/Users/theobelaire/Code/Tools/OpenNI-2.1.0/Redist
-
+        # the resulting completions should be put into this array
+        COMPREPLY=( $( compgen -W "$envs" -- $cur ) )
+    }
+    complete -F _ghc -o default ghc
+fi
