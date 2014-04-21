@@ -147,7 +147,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Tag browser
 " Bundle 'vim-scripts/taglist.vim' " Lets try something more modern
 Bundle 'majutsushi/tagbar'
-nnoremap \t :TagbarToggle<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 " Autobuilds builds ctags files
 " Bundle 'vim-misc'
 " Bundle 'xolox/vim-easytags'
