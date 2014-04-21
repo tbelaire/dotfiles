@@ -80,6 +80,11 @@ Bundle 'tommcdo/vim-exchange'
 " Like cx, but use the current line.
 " cxc
 " Clear any {motion} pending for exchange.
+
+" Bulk file rename
+Bundle 'renamer.vim'
+
+
 " Completely changes the clipboard
 " old d is now m,
 " d now doesn't copy
