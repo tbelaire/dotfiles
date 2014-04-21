@@ -35,7 +35,7 @@ Bundle 'tpope/vim-repeat'
 " I forked to remove \\ as comment
 Bundle 'tbelaire/vim-commentary'
 
-" TODO add mappings
+" ]d [d for gitGutter hunks
 Bundle 'tpope/vim-unimpaired'
 
 Bundle 'tpope/vim-fugitive'
@@ -322,8 +322,8 @@ if has("gui_macvim")
     let macvim_hig_shift_movement = 1
 endif
 
-nnoremap d] :GitGutterNextHunk<CR>
-nnoremap d[ :GitGutterPrevHunk<CR>
+nnoremap ]d :GitGutterNextHunk<CR>
+nnoremap [d :GitGutterPrevHunk<CR>
 
 " ================ Search Settings  =================
 
