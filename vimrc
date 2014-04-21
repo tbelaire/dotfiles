@@ -347,10 +347,10 @@ vnoremap <silent> * :call VisualSelection('f', '')<CR>
 vnoremap <silent> # :call VisualSelection('b', '')<CR>
 
 " ================ Typos of Commands ================
-command Wq wq
-command WQ wq
-command W w
-command Q q
+command! Wq wq
+command! WQ wq
+command! W w
+command! Q q
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works in MacVim (gui) mode. As of 7.3 it doesn't require gui
