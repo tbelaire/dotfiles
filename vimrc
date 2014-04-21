@@ -296,9 +296,9 @@ inoremap jj <ESC>
 nnoremap <expr> dd match(getline('.'), '^\s*$') == -1 ? 'dd' : '"_dd'
 
 " *E*dit my *V*imrc in a split
-:nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>ev :split $MYVIMRC<cr>
 " *S*ource my *V*imrc
-:nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Move between splits with just C-hjkl
 nnoremap <C-h> <C-w>h
