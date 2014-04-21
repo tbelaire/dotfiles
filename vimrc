@@ -253,9 +253,6 @@ Bundle 'tex_autoclose.vim'
 " Kinda buggy
 " Bundle 'FredKSchott/CoVim'
 
-" dd will not store into the default reguster if it's
-" an empty line I delete
-nnoremap <expr> dd match(getline('.'), '^\s*$') == -1 ? 'dd' : '"_dd'
 
 filetype plugin indent on
 " ================ General Config ====================
@@ -285,6 +282,10 @@ set ruler
 "au FocusLost * :wa
 " sets jj to to exit insert mode
 inoremap jj <ESC>
+
+" dd will not store into the default reguster if it's
+" an empty line I delete
+nnoremap <expr> dd match(getline('.'), '^\s*$') == -1 ? 'dd' : '"_dd'
 
 " *E*dit my *V*imrc in a split
 :nnoremap <leader>ev :split $MYVIMRC<cr>
