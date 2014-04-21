@@ -12,7 +12,9 @@ Bundle 'gmarik/vundle'
 
 " Colours!
 Bundle 'Solarized'
-Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+" Use "vim/" if not checkout out the old commit
+" Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
 
 " Tabs?
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
