@@ -325,6 +325,10 @@ endif
 nnoremap ]d :GitGutterNextHunk<CR>
 nnoremap [d :GitGutterPrevHunk<CR>
 
+" I tend to think I'm not in select mode when I type these commands
+snoremap : <C-G>:
+snoremap / <C-G>/
+
 " ================ Search Settings  =================
 
 set incsearch        "Find the next match as we type the search
