@@ -179,6 +179,10 @@ Bundle 'https://github.com/wlangstroth/vim-racket'
 
 " Less
 Bundle 'groenewege/vim-less'
+
+" idris (like haskell and coq)
+Bundle 'idris-hackers/idris-vim'
+
 " Haskell Fun stuff
 " Alternate haskell mode stuff
 
