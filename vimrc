@@ -305,6 +305,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+nnoremap <F1> <NOP>
+inoremap <F1> <NOP>
 " ================ Copy & Paste =====================
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
