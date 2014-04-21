@@ -370,8 +370,12 @@ set expandtab
 filetype plugin on
 filetype indent on
 
+" Show whitespace
+set list
 " Display tabs and trailing spaces visually
-set listchars=tab:\ \ ,trail:·
+set listchars=tab:>\ ,trail:␣,extends:>,precedes:<,nbsp:+
+" Possible space ␣ \u2423
+" Other space · \u00b7
 
 set wrap       "Yes wrap lines
 set linebreak    "Wrap lines at convenient points
