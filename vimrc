@@ -113,27 +113,24 @@ let g:syntastic_python_checkers=['pep8']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
-" NEWer
-" Bundle 'bling/vim-airline'
-" " let g:airline_powerline_fonts = 1
-"   if !exists('g:airline_symbols')
-"     let g:airline_symbols = {}
-"   endif
-
-"   " unicode symbols
-"   let g:airline_left_sep = ''
-"   let g:airline_right_sep = ''
-"   let g:airline_symbols.linenr = '¶'
-"   let g:airline_symbols.branch = '⎇'
-"   let g:airline_symbols.paste = 'ρ'
-"   let g:airline_symbols.paste = 'Þ'
-"   let g:airline_symbols.whitespace = 'Ξ'
-
-"   let g:airline#extensions#hunks#enabled = 1
-Bundle 'Lokaltog/vim-powerline'
 set laststatus=2                " Always show the statusline
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_theme = 'default'
+" NEWer
+
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts=1
+let g:airline_theme='bubblegum'
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
+
+" Old powerline, also not the python one
+" Bundle 'Lokaltog/vim-powerline'
+" let g:Powerline_symbols = 'fancy'
+" let g:Powerline_theme = 'default'
 
 " autocomplete using clang
 " Bundle 'clang-complete'
