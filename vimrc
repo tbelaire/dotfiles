@@ -284,6 +284,10 @@ set ruler
 
 " Save work when tabbing away.  I think it requires gui
 "au FocusLost * :wa
+
+let mapleader = "\\"
+let maplocalleader = ","
+
 " sets jj to to exit insert mode
 inoremap jj <ESC>
 
