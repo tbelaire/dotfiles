@@ -17,14 +17,15 @@ Bundle 'Solarized'
 Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
 
 " Tabs?
-Bundle 'techlivezheng/vim-plugin-minibufexpl'
-noremap <C-TAB>   :MBEbn<CR>
-noremap <C-S-TAB> :MBEbp<CR>
-"
-" Or, in MRU fashion
-"
-noremap <A-S-TAB>   :MBEbf<CR>
-noremap <A-TAB> :MBEbb<CR>
+" Bundle 'techlivezheng/vim-plugin-minibufexpl'
+" noremap <C-TAB>   :MBEbn<CR>
+" noremap <C-S-TAB> :MBEbp<CR>
+noremap <C-TAB> :bnext<CR>
+noremap <C-S-TAB> :bprev<CR>
+" " Or, in MRU fashion
+" "
+" noremap <A-S-TAB>   :MBEbf<CR>
+" noremap <A-TAB> :MBEbb<CR>
 
 " Things like ci" for change inside quotes
 " Or cst" for change surrounding <tag> to quotes
