@@ -254,6 +254,10 @@ Bundle 'tex_autoclose.vim'
 " Bundle 'FredKSchott/CoVim'
 
 
+if &shell =~# 'fish$'
+  set shell=/bin/bash
+endif
+
 filetype plugin indent on
 " ================ General Config ====================
 
