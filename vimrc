@@ -174,6 +174,11 @@ Bundle 'hynek/vim-python-pep8-indent'
 " For racket files
 Bundle 'https://github.com/wlangstroth/vim-racket'
 
+" Jsx
+" Bundle 'mxw/vim-jsx'
+
+" Less
+Bundle 'groenewege/vim-less'
 " Haskell Fun stuff
 " Alternate haskell mode stuff
 
