@@ -76,3 +76,10 @@ then
     }
     complete -F _ghc -o default ghc
 fi
+
+# GBA
+export DEVKITARM=/usr/local/Cellar/devkitARM/42
+export DEVKITPRO=/usr/local/Cellar/devkitARM/42
+
+# LLVM extra tools
+addToPath /usr/local/Cellar/llvm/3.4/bin
