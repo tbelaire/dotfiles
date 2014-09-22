@@ -1,4 +1,13 @@
 alias ls='ls -G'
 alias ll='ls -la'
+alias ssh='ssh -l tbelaire'
+alias ipy='ipython'
 
-alias gvim='open -a MacVim'
+alias latexmk='latexmk -pdf -pvc'
+
+alias aq='ag -Q'
+
+# For httpie
+function httpl {
+    http --pretty all "$*" | less -r
+}

@@ -1,0 +1,5 @@
+export OS161DIR=$HOME/Code/os161
+addToPath $OS161DIR/bin
+addToPath $OS161DIR/tools/bin
+
+alias bmake='bmake -m /Users/theobelaire/Code/os161/tools/share/mk/'

@@ -1,0 +1,4 @@
+PROMPT_COMMAND=" log_bash_persistent_history ; lc_command ; "$PROMPT_COMMAND
+
+# expect something like
+# log_bash_persistent_history ; lc_command ; update_terminal_cwd ; autojump_add_to_database
