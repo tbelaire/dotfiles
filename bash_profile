@@ -1,6 +1,6 @@
 
 
-dots=~/dotfiles
+dots=${DOTFILES:-~/dotfiles}
 
 # not used yet, still hardcoded
 extentions_to_source=".path"
