@@ -11,15 +11,16 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Colours!
-Bundle 'Solarized'
+" Bundle 'Solarized'
 " Use "vim/" if not checkout out the old commit
 " Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
-
+Bundle "print_bw.zip"
 " Tabs?
 " Bundle 'techlivezheng/vim-plugin-minibufexpl'
 " noremap <C-TAB>   :MBEbn<CR>
 " noremap <C-S-TAB> :MBEbp<CR>
+" TODO make sure the C-TAB makes it into the terminal
 noremap <C-TAB> :bnext<CR>
 noremap <C-S-TAB> :bprev<CR>
 " " Or, in MRU fashion
@@ -27,6 +28,9 @@ noremap <C-S-TAB> :bprev<CR>
 " noremap <A-S-TAB>   :MBEbf<CR>
 " noremap <A-TAB> :MBEbb<CR>
 
+" Project config in .projections.json for a project
+" Notable, :A to switch to alternate file
+Bundle 'tpope/vim-projectionist'
 " Things like ci" for change inside quotes
 " Or cst" for change surrounding <tag> to quotes
 Bundle 'tpope/vim-surround'
@@ -42,13 +46,24 @@ Bundle 'tpope/vim-fugitive'
 " Remove buffers once you move away
 " autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" For :Make and :Dispatch
+Bundle 'tpope/vim-dispatch'
+" For Clojure code
+" 
+Bundle 'tpope/vim-leiningen'
+Bundle 'tpope/vim-fireplace'
+
 " Tells you about changes
 Bundle 'airblade/vim-gitgutter'
 
 Bundle 'gregsexton/gitv'
 
+" aa for argumnet
+" ia for argument without ,
+" aA and iA eat the separator before not after
+Bundle 'b4winckler/vim-angry'
 " Unix commands
-" Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-eunuch'
 
 " W! to sudo then write
 Bundle 'gmarik/sudo-gui.vim'
@@ -66,6 +81,11 @@ Bundle 'justinmk/vim-sneak'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Command-T'
 
+Bundle 'wesQ3/vim-windowswap'
+" Move splits around
+let g:windowswap_map_keys = 0 "prevent default bindings
+nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
+nnoremap <silent> <leader>ww :call WindowSwap#DoWindowSwap()<CR>
 " File tray
 Bundle 'scrooloose/nerdtree'
 
@@ -100,6 +120,9 @@ Bundle 'renamer.vim'
 " let g:EasyMotion_keys = '1234567890'
 
 " Line things up
+" gl_ and gL_
+" as actions to put spaces to the left of or right of _
+Bundle 'tommcdo/vim-lion'
 " Need to learn how to use
 " Bundle 'godlygeek/tabular'
 " Does not work
@@ -108,17 +131,22 @@ Bundle 'renamer.vim'
 Bundle 'Syntastic'
 " This should have awesome error finding before compiling
 " let g:syntastic_python_checker_args = ''
-set colorcolumn=80
 let g:syntastic_python_checkers=['pep8']
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
-set laststatus=2                " Always show the statusline
-" NEWer
+" Let syntastic open the error list if there are errors
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_loc_list_height = 3
+let g:syntastic_cpp_compiler = '/usr/bin/clang++'
 
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
+
+
+" Check out later when using unite.vim
+" http://www.codeography.com/2013/06/17/replacing-all-the-things-with-unite-vim.html
+"
+set laststatus=2                " Always show the statusline
+" Newer statusline, since powerline has moved on
 Bundle 'bling/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline_theme='bubblegum'
@@ -155,8 +183,18 @@ nnoremap <leader>t :TagbarToggle<CR>
 " Find stdlib help in dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+" TODO use the above
 
+" function <SID>StripTrailingWhitespaces()
+"     let l = line(".")
+"     let c = col(".")
+"     %s/\s\+$//e
+"     call cursor(l, c)
+" endfun
+
+" autocmd FileType c,cpp,java,php,ruby,python,javascript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 " ============= Language specific stuff ===============
+" --language
 
 " Markdown
 " Doesn't seem to work
@@ -185,63 +223,79 @@ Bundle 'idris-hackers/idris-vim'
 
 " Haskell Fun stuff
 " Alternate haskell mode stuff
+Bundle 'bitc/vim-hdevtools'
+" BundleInstall 'file://Users/theobelaire/Code/Vim/vim-cabal-hdevtools'
 
-if 1
-    function! s:FindCabalSandbox()
-       let l:sandbox    = finddir('.cabal-sandbox', './;../')
-       let l:absSandbox = fnamemodify(l:sandbox, ':p')
-       return l:absSandbox
-    endfunction
+" Bundle 'tpope/vim-pathogen'
+" execute pathogen#infect('bundle/{}', '~/Code/Vim/{}')
 
-    function! s:FindCabalSandboxPackageConf()
-       return glob(s:FindCabalSandbox() . '*-packages.conf.d')
-    endfunction
+" if 1
+"     function! s:FindCabalSandbox()
+"        let l:sandbox    = finddir('.cabal-sandbox', './;../')
+"        let l:absSandbox = fnamemodify(l:sandbox, ':p')
+"        return l:absSandbox
+"     endfunction
 
-    function! s:HaskellSourceDir()
-       return fnamemodify(s:FindCabalSandbox(), ':h:h') . '/src'
-    endfunction
+"     function! s:FindCabalSandboxPackageConf()
+"        return glob(s:FindCabalSandbox() . '*-packages.conf.d')
+"     endfunction
 
-    let g:hdevtools_options  = '-g-package-conf=' . s:FindCabalSandboxPackageConf()
-    let g:hdevtools_options .= ' ' . '-g-i' . s:HaskellSourceDir()
-    
-    Bundle 'bitc/vim-hdevtools'
-    au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
-    au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
-    au FileType haskell command! Type HdevtoolsType
-    " example of how to pass options to ghc
-    " let g:hdevtools_options = '-g-isrc -g-Wall'
-    " TODO make it only write the command once
-else
-    Bundle 'lukerandall/haskellmode-vim'
-    " If you want to highlight delimiter characters (useful if you have a
-    " light-coloured background), add to your .vimrc: >
-    " let hs_highlight_delimiters = 1
-    " To treat True and False as keywords as opposed to ordinary
-    " identifiers,
-    let hs_highlight_boolean = 1
-    let hs_allow_hash_operator = 1
+"     function! s:HaskellSourceDir()
+"         let l:cabal_file = findfile('*.cabal', '.;')
+"         shell("normal! !extract-haskell-source-dir " . l:cabal_file)
+"         " exec
+"         " exec "normal! !extract-haskell-source-dir " . l:cabal_file
+"         return
+"     endfunction
 
-    au BufEnter *.hs compiler ghc
-    let g:haddock_browser="open -a Google\ Chrome"
+"     let g:hdevtools_options  = '-g-package-conf=' . s:FindCabalSandboxPackageConf()
+"     let g:hdevtools_options .= ' ' . '-g-i' . s:HaskellSourceDir()
 
-    "Displaying the type of sub-expressions (ghc-mod type)
-    "Displaying error/warning messages and their locations (ghc-mod check and ghc-mod lint)
-    "Displaying the expansion of splices (ghc-mod expand)
-    " Bundle 'eagletmt/ghcmod-vim'
+"     Bundle 'bitc/vim-hdevtools'
+"     au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
+"     au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
+"     au FileType haskell command! Type HdevtoolsType
+"     " example of how to pass options to ghc
+"     " let g:hdevtools_options = '-g-isrc -g-Wall'
+"     " TODO make it only write the command once
+" else
+"     Bundle 'lukerandall/haskellmode-vim'
+"     " If you want to highlight delimiter characters (useful if you have a
+"     " light-coloured background), add to your .vimrc: >
+"     " let hs_highlight_delimiters = 1
+"     " To treat True and False as keywords as opposed to ordinary
+"     " identifiers,
+"     let hs_highlight_boolean = 1
+"     let hs_allow_hash_operator = 1
 
-    " Pre-requisite for the above
-    " Bundle 'Shougo/vimproc.vim'
-    " It also has some makefile that must be run
-    " Annoying
-    " Bundle 'eagletmt/tinytest'
-endif
+"     au BufEnter *.hs compiler ghc
+"     let g:haddock_browser="open -a Google\ Chrome"
+
+"     "Displaying the type of sub-expressions (ghc-mod type)
+"     "Displaying error/warning messages and their locations (ghc-mod check and ghc-mod lint)
+"     "Displaying the expansion of splices (ghc-mod expand)
+"     " Bundle 'eagletmt/ghcmod-vim'
+
+"     " Pre-requisite for the above
+"     " Bundle 'Shougo/vimproc.vim'
+"     " It also has some makefile that must be run
+"     " Annoying
+"     " Bundle 'eagletmt/tinytest'
+" endif
 
 " For Coq
 Bundle 'def-lkb/vimbufsync'
-Bundle 'trefis/coquille'
-au FileType coq call coquille#FNMapping()
+Bundle 'tbelaire/coquille'
 " Maps Coquille commands to <F2> (Undo), <F3> (Next), <F4> (ToCursor)
+au FileType coq call coquille#FNMapping()
 
+function! LaunchHoq()
+    let g:coquille_coqtop_path="hoqtop"
+    let b:syntastic_checkers = ["hoqtop"]
+    call coquille#Launch()
+endfunction
+
+command! -bar -buffer -nargs=* -complete=file HoqLaunch call LaunchHoq()
 
 
 " LaTeX Stuff.  Compile with \ll
@@ -285,6 +339,13 @@ syntax on
 
 " Turn on the status bar
 set ruler
+
+set colorcolumn=80
+
+" Allow color schemes to do bright colors without forcing bold.
+" if &t_Co == 8 && $TERM !~# '^linux'
+"   set t_Co=16
+" endif
 
 " Save work when tabbing away.  I think it requires gui
 "au FocusLost * :wa
@@ -520,7 +581,7 @@ function! DoMath()
     imap \QED ∎
 endfunction
 
-autocmd BufRead,BufNewFile *.txt :call DoMath()
+" autocmd BufRead,BufNewFile *.txt :call DoMath()
 " autocmd BufRead,BufNewFile *.mdown :call DoMath()
 " ================= Python ===========================
 "
