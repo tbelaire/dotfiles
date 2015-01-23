@@ -49,6 +49,3 @@ if [ $TERM == "screen" ]; then
     TERM=screen-256color
 fi
 
-
-# added by Anaconda3 2.0.1 installer
-export PATH="/Users/theobelaire/anaconda/bin:$PATH"
