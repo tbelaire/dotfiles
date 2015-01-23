@@ -379,7 +379,20 @@ noremap <leader>y "*y
 noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+" noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+if &term =~ "xterm.*"
+    let &t_ti = &t_ti . "\e[?2004h"
+    let &t_te = "\e[?2004l" . &t_te
+    function XTermPasteBegin(ret)
+        set pastetoggle=<Esc>[201~
+        set paste
+        return a:ret
+    endfunction
+    map <expr> <Esc>[200~ XTermPasteBegin("i")
+    imap <expr> <Esc>[200~ XTermPasteBegin("")
+    cmap <Esc>[200~ <nop>
+    cmap <Esc>[201~ <nop>
+endif
 " ================ Movement Config  =================
 "
 " Select and shift arrow keys work as 'normal' or nonvimily
