@@ -218,6 +218,8 @@ Bundle 'https://github.com/wlangstroth/vim-racket'
 " Less
 Bundle 'groenewege/vim-less'
 
+" Rust
+Plugin 'wting/rust.vim'
 " idris (like haskell and coq)
 Bundle 'idris-hackers/idris-vim'
 
