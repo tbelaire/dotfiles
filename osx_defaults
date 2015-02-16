@@ -1,0 +1,1 @@
+defaults write -app Skim SKAutoReloadFileUpdate -boolean true
