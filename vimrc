@@ -218,6 +218,8 @@ Bundle 'https://github.com/wlangstroth/vim-racket'
 " Less
 Bundle 'groenewege/vim-less'
 
+" Rust
+Plugin 'wting/rust.vim'
 " idris (like haskell and coq)
 Bundle 'idris-hackers/idris-vim'
 
@@ -379,7 +381,20 @@ noremap <leader>y "*y
 noremap <leader>yy "*Y
 
 " Preserve indentation while pasting text from the OS X clipboard
-noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+" noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+if &term =~ "xterm.*"
+    let &t_ti = &t_ti . "\e[?2004h"
+    let &t_te = "\e[?2004l" . &t_te
+    function XTermPasteBegin(ret)
+        set pastetoggle=<Esc>[201~
+        set paste
+        return a:ret
+    endfunction
+    map <expr> <Esc>[200~ XTermPasteBegin("i")
+    imap <expr> <Esc>[200~ XTermPasteBegin("")
+    cmap <Esc>[200~ <nop>
+    cmap <Esc>[201~ <nop>
+endif
 " ================ Movement Config  =================
 "
 " Select and shift arrow keys work as 'normal' or nonvimily
@@ -586,7 +601,9 @@ endfunction
 " ================= Python ===========================
 "
 " Add the virtualenv's site-packages to vim path
-py << EOF
+if has('python')
+    function DoVirtualenv()
+        py << EOF
 import os.path
 import sys
 import vim
@@ -596,3 +613,7 @@ if 'VIRTUAL_ENV' in os.environ:
     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
     execfile(activate_this, dict(__file__=activate_this))
 EOF
+    endfunction
+    call DoVirtualenv()
+endif
+

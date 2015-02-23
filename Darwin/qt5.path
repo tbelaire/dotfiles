@@ -1,0 +1,4 @@
+addToPath '/usr/local/Cellar/qt5/5.4.0/bin'
+
+#    LDFLAGS:  -L/usr/local/opt/sqlite/lib
+#    CPPFLAGS: -I/usr/local/opt/sqlite/include
