@@ -7,4 +7,5 @@ Bundle 'Solarized'
 colorscheme Earthsong
 " set guifont=*
 " to bring up a picker
-set guifont=Fantasque\ Sans\ Mono:h14,Menlo\ Regular\ for\ Powerline:h14,Source\ Code\ Pro\ For\ Powerline:h14,Source\ Code\ Pro:h18,Menlo:h14
+set guifont=Ubuntu\ Mono\ 12,Fantasque\ Sans\ Mono:h14,Menlo\ Regular\ for\ Powerline:h14,Source\ Code\ Pro\ For\ Powerline:h14,Source\ Code\ Pro:h18,Menlo:h14
+
