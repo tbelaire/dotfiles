@@ -225,6 +225,9 @@ Bundle 'idris-hackers/idris-vim'
 " Haskell Fun stuff
 " Alternate haskell mode stuff
 Bundle 'bitc/vim-hdevtools'
+au Filetype haskell nnoremap <buffer> \t :HdevtoolsType<CR>
+au Filetype haskell nnoremap <buffer> \T :HdevtoolsClear<CR>
+
 " BundleInstall 'file://Users/theobelaire/Code/Vim/vim-cabal-hdevtools'
 
 " Bundle 'tpope/vim-pathogen'
