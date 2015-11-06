@@ -16,16 +16,16 @@ function addToPath(){
 
 function sourceDir(){
     for file in *; do  # sets $file to * if empty directory
-        #echo "saw $file";
-        if [ -d $file ] && 
-            [ $(hostname) = $file ]; then
-            #echo "Recursing into $file";
-            cd $file;
-            sourceDir $file;
+        # echo "saw $file";
+        if [[ -d "$file" ]] && 
+            [[ $(hostname -f) = *"${file}"* ]]; then
+            # echo "Recursing into $file";
+            cd "$file";
+            sourceDir "$file";
             cd ..;
-        elif [[ $file == *.path ]]; then
+        elif [[ "$file" == *.path ]]; then
             # echo "$file is a .path";
-            source $file;
+            source "$file";
         fi
     done
 }
@@ -49,6 +49,3 @@ if [ $TERM == "screen" ]; then
     TERM=screen-256color
 fi
 
-
-# added by Anaconda3 2.0.1 installer
-export PATH="/Users/theobelaire/anaconda/bin:$PATH"

@@ -1,0 +1,3 @@
+addToPath $HOME/sys161/bin
+addToPath $HOME/sys161/tools/bin
+
