@@ -140,6 +140,7 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_loc_list_height = 3
 let g:syntastic_cpp_compiler = '/usr/bin/clang++'
 
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 
 " Check out later when using unite.vim
@@ -148,12 +149,12 @@ let g:syntastic_cpp_compiler = '/usr/bin/clang++'
 set laststatus=2                " Always show the statusline
 " Newer statusline, since powerline has moved on
 Bundle 'bling/vim-airline'
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 let g:airline_theme='bubblegum'
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline#extensions#tabline#left_sep = ' '
-" let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Old powerline, also not the python one
 " Bundle 'Lokaltog/vim-powerline'
