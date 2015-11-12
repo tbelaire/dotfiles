@@ -79,6 +79,8 @@ Bundle 'tpope/vim-abolish'
 Bundle 'justinmk/vim-sneak'
 "ctrlp is buggy or something.  Not showing all my files
 Bundle 'kien/ctrlp.vim'
+" This should limit it to only files tracked by git....
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 "Bundle 'Command-T'
 
 Bundle 'wesQ3/vim-windowswap'
@@ -139,6 +141,7 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_loc_list_height = 3
 let g:syntastic_cpp_compiler = '/usr/bin/clang++'
+let g:syntastic_cpp_compiler_options = '-std=c++11'
 
 
 
@@ -214,10 +217,17 @@ Bundle 'https://github.com/wlangstroth/vim-racket'
 
 " Jsx
 " Bundle 'mxw/vim-jsx'
+" Javascript
+Bundle 'marijnh/tern_for_vim'
+
+" C++ LLDB
+Bundle 'gilligan/vim-lldb'
 
 " Less
 Bundle 'groenewege/vim-less'
 
+" TOML, ini like config file used by cargo
+Bundle 'cespare/vim-toml'
 " Rust
 Plugin 'wting/rust.vim'
 " idris (like haskell and coq)
