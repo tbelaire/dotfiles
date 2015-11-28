@@ -316,6 +316,13 @@ command! -bar -buffer -nargs=* -complete=file HoqLaunch call LaunchHoq()
 "
 " For TeX
 Bundle 'tex_autoclose.vim'
+let g:tex_fold_enabled=1
+
+let g:macvim_skim_app_path='/opt/homebrew-cask/Caskroom/skim/1.4.10/Skim.app'
+let g:macvim_skim_out_dir='out'
+" let g:macvim_skim_pdftex_command='/usr/texbin/latexmk'
+Bundle 'tbelaire/macvim-skim'
+
 
 
 " Pair prograimming
