@@ -54,10 +54,6 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
 
-# GBA
-export DEVKITARM=/usr/local/Cellar/devkitARM/42
-export DEVKITPRO=/usr/local/Cellar/devkitARM/42
-
 # LLVM extra tools
 addToPath /usr/local/Cellar/llvm/3.4/bin
 

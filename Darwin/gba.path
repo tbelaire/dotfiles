@@ -1,0 +1,8 @@
+
+# GBA
+export DEVKITARM=/Users/tbelaire/Code/Rust/gba/devkitARM/
+export DEVKITPRO=/Users/tbelaire/Code/Rust/gba/devkitARM/
+
+addToPath $DEVKITARM/bin
+
+
