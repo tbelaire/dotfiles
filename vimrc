@@ -8,6 +8,7 @@ call vundle#rc()
 " =============== Vundle Packagages ==================
 " let Vundle manage Vundle
 " required!
+call vundle#begin()
 Bundle 'gmarik/vundle'
 
 " Colours!
@@ -324,12 +325,13 @@ Bundle 'tex_autoclose.vim'
 " Bundle 'FredKSchott/CoVim'
 
 
+" ================ End of Bundles ====================
+call vundle#end()
+filetype plugin indent on
+" ================ General Config ====================
 if &shell =~# 'fish$'
   set shell=/bin/bash
 endif
-
-filetype plugin indent on
-" ================ General Config ====================
 
 set encoding=utf-8              "Use utf-8
 set number                      "Line numbers are good
