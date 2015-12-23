@@ -309,15 +309,16 @@ Plugin 'bitc/vim-hdevtools'
 Plugin 'def-lkb/vimbufsync'
 Plugin 'tbelaire/coquille'
 " Maps Coquille commands to <F2> (Undo), <F3> (Next), <F4> (ToCursor)
-au FileType coq call coquille#FNMapping()
+" Moved to ftplugin
+" au FileType coq call coquille#FNMapping()
 
-function! LaunchHoq()
-    let g:coquille_coqtop_path="hoqtop"
-    let b:syntastic_checkers = ["hoqtop"]
-    call coquille#Launch()
-endfunction
+" function! LaunchHoq()
+"     let g:coquille_coqtop_path="hoqtop"
+"     let b:syntastic_checkers = ["hoqtop"]
+"     call coquille#Launch()
+" endfunction
 
-command! -bar -buffer -nargs=* -complete=file HoqLaunch call LaunchHoq()
+" command! -bar -buffer -nargs=* -complete=file HoqLaunch call LaunchHoq()
 
 
 " LaTeX Stuff.  Compile with \ll
@@ -327,8 +328,8 @@ command! -bar -buffer -nargs=* -complete=file HoqLaunch call LaunchHoq()
 Plugin 'tex_autoclose.vim'
 
 
-let g:macvim_skim_app_path='/opt/homebrew-cask/Caskroom/skim/1.4.10/Skim.app'
-let g:macvim_skim_out_dir='out'
+" let g:macvim_skim_app_path='/opt/homebrew-cask/Caskroom/skim/1.4.10/Skim.app'
+" let g:macvim_skim_out_dir='out'
 " let g:macvim_skim_pdftex_command='/usr/texbin/latexmk'
 Plugin 'tbelaire/macvim-skim'
 
@@ -636,7 +637,7 @@ endfunction
 "
 " Add the virtualenv's site-packages to vim path
 if has('python')
-    function DoVirtualenv()
+    function! DoVirtualenv()
         py << EOF
 import os.path
 import sys
