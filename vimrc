@@ -9,16 +9,18 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 call vundle#begin()
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Colours!
-" Bundle 'Solarized'
+" Plugin 'Solarized'
 " Use "vim/" if not checkout out the old commit
-" Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
-Bundle "daylerees/colour-schemes", { "rtp": "vim/" }
-Bundle "print_bw.zip"
+" Plugin 'daylerees/colour-schemes' { 'rtp': 'vim-themes/' }
+
+Plugin 'daylerees/colour-schemes', { 'rtp': 'vim/' }
+
+" Plugin 'print_bw.zip'
 " Tabs?
-" Bundle 'techlivezheng/vim-plugin-minibufexpl'
+" Plugin 'techlivezheng/vim-plugin-minibufexpl'
 " noremap <C-TAB>   :MBEbn<CR>
 " noremap <C-S-TAB> :MBEbp<CR>
 " TODO make sure the C-TAB makes it into the terminal
@@ -31,72 +33,68 @@ noremap <C-S-TAB> :bprev<CR>
 
 " Project config in .projections.json for a project
 " Notable, :A to switch to alternate file
-Bundle 'tpope/vim-projectionist'
+Plugin 'tpope/vim-projectionist'
 " Things like ci" for change inside quotes
 " Or cst" for change surrounding <tag> to quotes
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 " gcc to comment a line, gcu to uncomment
 " I forked to remove \\ as comment
-Bundle 'tbelaire/vim-commentary'
+Plugin 'tbelaire/vim-commentary'
 
 " ]d [d for gitGutter hunks
-Bundle 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-unimpaired'
 
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " Remove buffers once you move away
 " autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " For :Make and :Dispatch
-Bundle 'tpope/vim-dispatch'
-" For Clojure code
-" 
-Bundle 'tpope/vim-leiningen'
-Bundle 'tpope/vim-fireplace'
+Plugin 'tpope/vim-dispatch'
 
 " Tells you about changes
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
-Bundle 'gregsexton/gitv'
+Plugin 'gregsexton/gitv'
 
 " aa for argumnet
 " ia for argument without ,
 " aA and iA eat the separator before not after
-Bundle 'b4winckler/vim-angry'
+Plugin 'b4winckler/vim-angry'
 " Unix commands
-Bundle 'tpope/vim-eunuch'
+Plugin 'tpope/vim-eunuch'
 
 " W! to sudo then write
-Bundle 'gmarik/sudo-gui.vim'
+Plugin 'gmarik/sudo-gui.vim'
 " Working with ag
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 " Extends the keystrokes ga to show more information than just hex
-Bundle 'tpope/vim-characterize'
+Plugin 'tpope/vim-characterize'
 " cr{s,c,m,u} for CoeRce to snake_case, camelCase, MixedCase, UPPER_CASE
-Bundle 'tpope/vim-abolish'
+Plugin 'tpope/vim-abolish'
 " s{char}{char}, jump to cc, ; to repeat, ^O to return to start
 " Operator is z
-Bundle 'justinmk/vim-sneak'
+Plugin 'justinmk/vim-sneak'
 "ctrlp is buggy or something.  Not showing all my files
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " This should limit it to only files tracked by git....
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
-"Bundle 'Command-T'
+"Plugin 'Command-T'
 
-Bundle 'wesQ3/vim-windowswap'
+Plugin 'wesQ3/vim-windowswap'
 " Move splits around
 let g:windowswap_map_keys = 0 "prevent default bindings
 nnoremap <silent> <leader>yw :call WindowSwap#MarkWindowSwap()<CR>
 nnoremap <silent> <leader>ww :call WindowSwap#DoWindowSwap()<CR>
 " File tray
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " gui undo
-Bundle 'sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
 
 
-Bundle 'tommcdo/vim-exchange'
+Plugin 'tommcdo/vim-exchange'
 " cx
 " On the first use, define the first {motion} to exchange. On the second use, define the second {motion} and perform the exchange.
 " cxx
@@ -105,7 +103,7 @@ Bundle 'tommcdo/vim-exchange'
 " Clear any {motion} pending for exchange.
 
 " Bulk file rename
-Bundle 'renamer.vim'
+Plugin 'renamer.vim'
 
 
 " Completely changes the clipboard
@@ -115,23 +113,23 @@ Bundle 'renamer.vim'
 " ex.  sw deletes a word and pastes a new one
 " after a p, you can use c-n and c-p to change it
 " to the older or newer yank
-" Bundle 'svermeulen/vim-easyclip'
+" Plugin 'svermeulen/vim-easyclip'
 
 " \\f to activate
-" Bundle 'Lokaltog/vim-easymotion'
+" Plugin 'Lokaltog/vim-easymotion'
 " Let it use the number keys instead of the alphabet
 " let g:EasyMotion_keys = '1234567890'
 
 " Line things up
 " gl_ and gL_
 " as actions to put spaces to the left of or right of _
-Bundle 'tommcdo/vim-lion'
+Plugin 'tommcdo/vim-lion'
 " Need to learn how to use
-" Bundle 'godlygeek/tabular'
+" Plugin 'godlygeek/tabular'
 " Does not work
-"Bundle 'vim-scripts/Align'
+"Plugin 'vim-scripts/Align'
 
-Bundle 'Syntastic'
+Plugin 'Syntastic'
 " This should have awesome error finding before compiling
 " let g:syntastic_python_checker_args = ''
 let g:syntastic_python_checkers=['pep8']
@@ -151,7 +149,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11'
 "
 set laststatus=2                " Always show the statusline
 " Newer statusline, since powerline has moved on
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 " let g:airline_powerline_fonts=1
 let g:airline_theme='bubblegum'
 let g:airline#extensions#hunks#enabled = 1
@@ -160,33 +158,34 @@ let g:airline#extensions#tabline#enabled = 1
 " let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Old powerline, also not the python one
-" Bundle 'Lokaltog/vim-powerline'
+" Plugin 'Lokaltog/vim-powerline'
 " let g:Powerline_symbols = 'fancy'
 " let g:Powerline_theme = 'default'
 
 " autocomplete using clang
-" Bundle 'clang-complete'
+" Plugin 'clang-complete'
 " let g:clang_user_options='|| exit 0'
 " autocoomplete using ctags
 " Doesn't seem to work
-"Bundle 'code_complete'
+"Plugin 'code_complete'
 
 
-" Bundle 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " autocomplete using clang
 
 " Tag browser
-" Bundle 'vim-scripts/taglist.vim' " Lets try something more modern
-Bundle 'majutsushi/tagbar'
+" Plugin 'vim-scripts/taglist.vim' " Lets try something more modern
+Plugin 'majutsushi/tagbar'
 nnoremap <leader>t :TagbarToggle<CR>
+
 " Autobuilds builds ctags files
-" Bundle 'vim-misc'
-" Bundle 'xolox/vim-easytags'
+" Plugin 'vim-misc'
+" Plugin 'xolox/vim-easytags'
 
 " Find stdlib help in dash
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
 " TODO use the above
 
 " function <SID>StripTrailingWhitespaces()
@@ -198,48 +197,58 @@ Bundle 'rizzatti/dash.vim'
 
 " autocmd FileType c,cpp,java,php,ruby,python,javascript autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 " ============= Language specific stuff ===============
-" --language
+" This stores lots of ftplugins and such, so only `Plugin`
+" lines should need to be in here.  Maybe globals too...
+Plugin 'tbelaire/vim_filetypes'
 
 " Markdown
 " Doesn't seem to work
-"Bundle 'swaroopch/vim-markdown-preview'
+"Plugin 'swaroopch/vim-markdown-preview'
 
 " For python
 " TODO find out what it does
 " It highlights eol whitespace while I'm typing
-"Bundle 'klen/python-mode'
+"Plugin 'klen/python-mode'
 " Virtualenv stuff
-Bundle 'virtualenv.vim'
+Plugin 'virtualenv.vim'
 
-Bundle 'hynek/vim-python-pep8-indent'
+Plugin 'hynek/vim-python-pep8-indent'
 
 " For racket files
-Bundle 'https://github.com/wlangstroth/vim-racket'
+Plugin 'https://github.com/wlangstroth/vim-racket'
+
+" For Clojure code
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-fireplace'
 
 " Jsx
-" Bundle 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
 " Javascript
-Bundle 'marijnh/tern_for_vim'
+Plugin 'marijnh/tern_for_vim'
 
 " C++ LLDB
-Bundle 'gilligan/vim-lldb'
+Plugin 'gilligan/vim-lldb'
 
 " Less
-Bundle 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
 
 " TOML, ini like config file used by cargo
-Bundle 'cespare/vim-toml'
+Plugin 'cespare/vim-toml'
 " Rust
 Plugin 'wting/rust.vim'
 " idris (like haskell and coq)
-Bundle 'idris-hackers/idris-vim'
+Plugin 'idris-hackers/idris-vim'
 
 " Haskell Fun stuff
 " Alternate haskell mode stuff
-Bundle 'bitc/vim-hdevtools'
-" BundleInstall 'file://Users/theobelaire/Code/Vim/vim-cabal-hdevtools'
+Plugin 'bitc/vim-hdevtools'
+" In ftplugin:
+" nnoremap <buffer> <LocalLeader>t :HdevtoolsType<CR>
+" nnoremap <buffer> <LocalLeader>T :HdevtoolsClear<CR>
 
-" Bundle 'tpope/vim-pathogen'
+" PluginInstall 'file://Users/theobelaire/Code/Vim/vim-cabal-hdevtools'
+
+" Plugin 'tpope/vim-pathogen'
 " execute pathogen#infect('bundle/{}', '~/Code/Vim/{}')
 
 " if 1
@@ -264,7 +273,7 @@ Bundle 'bitc/vim-hdevtools'
 "     let g:hdevtools_options  = '-g-package-conf=' . s:FindCabalSandboxPackageConf()
 "     let g:hdevtools_options .= ' ' . '-g-i' . s:HaskellSourceDir()
 
-"     Bundle 'bitc/vim-hdevtools'
+"     Plugin 'bitc/vim-hdevtools'
 "     au FileType haskell nnoremap <buffer> <F1> :HdevtoolsType<CR>
 "     au FileType haskell nnoremap <buffer> <silent> <F2> :HdevtoolsClear<CR>
 "     au FileType haskell command! Type HdevtoolsType
@@ -272,7 +281,7 @@ Bundle 'bitc/vim-hdevtools'
 "     " let g:hdevtools_options = '-g-isrc -g-Wall'
 "     " TODO make it only write the command once
 " else
-"     Bundle 'lukerandall/haskellmode-vim'
+"     Plugin 'lukerandall/haskellmode-vim'
 "     " If you want to highlight delimiter characters (useful if you have a
 "     " light-coloured background), add to your .vimrc: >
 "     " let hs_highlight_delimiters = 1
@@ -287,18 +296,18 @@ Bundle 'bitc/vim-hdevtools'
 "     "Displaying the type of sub-expressions (ghc-mod type)
 "     "Displaying error/warning messages and their locations (ghc-mod check and ghc-mod lint)
 "     "Displaying the expansion of splices (ghc-mod expand)
-"     " Bundle 'eagletmt/ghcmod-vim'
+"     " Plugin 'eagletmt/ghcmod-vim'
 
 "     " Pre-requisite for the above
-"     " Bundle 'Shougo/vimproc.vim'
+"     " Plugin 'Shougo/vimproc.vim'
 "     " It also has some makefile that must be run
 "     " Annoying
-"     " Bundle 'eagletmt/tinytest'
+"     " Plugin 'eagletmt/tinytest'
 " endif
 
 " For Coq
-Bundle 'def-lkb/vimbufsync'
-Bundle 'tbelaire/coquille'
+Plugin 'def-lkb/vimbufsync'
+Plugin 'tbelaire/coquille'
 " Maps Coquille commands to <F2> (Undo), <F3> (Next), <F4> (ToCursor)
 au FileType coq call coquille#FNMapping()
 
@@ -312,27 +321,33 @@ command! -bar -buffer -nargs=* -complete=file HoqLaunch call LaunchHoq()
 
 
 " LaTeX Stuff.  Compile with \ll
-" Bundle 'LaTeX-Box-Team/LaTeX-Box'
+" Plugin 'LaTeX-Box-Team/LaTeX-Box'
 "
 " For TeX
-Bundle 'tex_autoclose.vim'
-let g:tex_fold_enabled=1
+Plugin 'tex_autoclose.vim'
+
 
 let g:macvim_skim_app_path='/opt/homebrew-cask/Caskroom/skim/1.4.10/Skim.app'
 let g:macvim_skim_out_dir='out'
 " let g:macvim_skim_pdftex_command='/usr/texbin/latexmk'
-Bundle 'tbelaire/macvim-skim'
+Plugin 'tbelaire/macvim-skim'
+
+" Conceal \delta and such, and don't make them super ugly
+" set conceallevel=1
+" highlight Conceal guibg=bg
+" let g:tex_conceal="gm"
+
 
 
 
 " Pair prograimming
-" Bundle 'Floobits/floobits-vim'
+" Plugin 'Floobits/floobits-vim'
 " Co-operative vim
 " Kinda buggy
-" Bundle 'FredKSchott/CoVim'
+" Plugin 'FredKSchott/CoVim'
 
 
-" ================ End of Bundles ====================
+" ================ End of Plugins ====================
 call vundle#end()
 filetype plugin indent on
 " ================ General Config ====================
