@@ -57,3 +57,5 @@ fi
 # LLVM extra tools
 addToPath /usr/local/Cellar/llvm/3.4/bin
 
+# Extra tools from cargo extra
+addToPath "/Users/tbelaire/.multirust/toolchains/nightly/cargo/bin"
