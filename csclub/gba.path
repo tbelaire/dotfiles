@@ -1,0 +1,4 @@
+
+export DEVKITARM=~/Code/devkitARM/
+addToPath $DEVKITARM/bin
+
