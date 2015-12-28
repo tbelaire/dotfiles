@@ -411,6 +411,12 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <F1> <NOP>
 inoremap <F1> <NOP>
+
+" Normally <C-U> deletes back to start of line,
+" now it sets an undo point, then deletes to end of line.
+" That way, it's less destructive.
+inoremap <C-U> <C-G>u<C-U>
+
 " ================ Copy & Paste =====================
 " Yank text to the OS X clipboard
 noremap <leader>y "*y
