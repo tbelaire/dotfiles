@@ -611,7 +611,7 @@ endfunction
 "
 " Add the virtualenv's site-packages to vim path
 if has('python')
-    function DoVirtualenv()
+    function! DoVirtualenv()
         py << EOF
 import os.path
 import sys
