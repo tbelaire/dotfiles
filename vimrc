@@ -182,7 +182,9 @@ noremap <localleader>= :Autoformat<CR>
 " Tag browser
 " Bundle 'vim-scripts/taglist.vim' " Lets try something more modern
 Bundle 'majutsushi/tagbar'
-nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <localleader>t :TagbarToggle<CR>
+nnoremap <localleader>T :TagbarOpenAutoClose<CR>
+nnoremap <localleader>f :TagbarTogglePause<CR>
 " Autobuilds builds ctags files
 " Bundle 'vim-misc'
 " Bundle 'xolox/vim-easytags'
