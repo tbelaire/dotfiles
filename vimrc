@@ -172,6 +172,13 @@ let g:airline#extensions#tabline#enabled = 1
 
 " autocomplete using clang
 
+Plugin 'tbelaire/vim-autoformat'
+let g:formatters_c = ["astyle_c"]
+noremap <localleader>= :Autoformat<CR>
+
+" Bundle 'rhysd/vim-clang-format'
+" noremap <loaclleader>= :ClangFormat<CR>
+
 " Tag browser
 " Bundle 'vim-scripts/taglist.vim' " Lets try something more modern
 Bundle 'majutsushi/tagbar'
