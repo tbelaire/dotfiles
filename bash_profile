@@ -1,6 +1,6 @@
 
 
-dots=~/dotfiles
+dots=${DOTFILES:-~/dotfiles}
 
 # not used yet, still hardcoded
 extentions_to_source=".path"
@@ -16,16 +16,16 @@ function addToPath(){
 
 function sourceDir(){
     for file in *; do  # sets $file to * if empty directory
-        #echo "saw $file";
-        if [ -d $file ] && 
-            [ $(hostname) = $file ] || [ $(uname) = $file ]; then
-            #echo "Recursing into $file";
-            cd $file;
-            sourceDir $file;
+        # echo "saw $file";
+        if [[ -d "$file" ]] && 
+            [[ $(hostname -f) = *"${file}"* ]] || [[ $(uname) = "${file}" ]]; then
+            # echo "Recursing into $file";
+            cd "$file";
+            sourceDir "$file";
             cd ..;
-        elif [[ $file == *.path ]]; then
+        elif [[ "$file" == *.path ]]; then
             # echo "$file is a .path";
-            source $file;
+            source "$file";
         fi
     done
 }
