@@ -242,7 +242,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'marijnh/tern_for_vim'
 
 " C++ LLDB
-Plugin 'gilligan/vim-lldb'
+" Plugin 'gilligan/vim-lldb'
 
 " Less
 Plugin 'groenewege/vim-less'
