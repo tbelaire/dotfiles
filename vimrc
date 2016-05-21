@@ -211,6 +211,11 @@ Plugin 'rizzatti/dash.vim'
 " lines should need to be in here.  Maybe globals too...
 Plugin 'tbelaire/vim_filetypes'
 
+
+" Arm assembly
+au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
+Plugin 'ARM9/arm-syntax-vim'
+
 " Markdown
 " Doesn't seem to work
 "Plugin 'swaroopch/vim-markdown-preview'
