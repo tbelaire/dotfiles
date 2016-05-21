@@ -150,7 +150,8 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "
 set laststatus=2                " Always show the statusline
 " Newer statusline, since powerline has moved on
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts=0
 let g:airline_theme='bubblegum'
 let g:airline#extensions#hunks#enabled = 1
