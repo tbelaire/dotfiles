@@ -1,0 +1,7 @@
+# addToPath /u/wbcowan/gnuarm-4.0.2/libexec/gcc/arm-elf/4.0.2
+# addToPath /u/wbcowan/gnuarm-4.0.2/arm-elf/bin/
+
+export TERM=xterm-256color
+
+addToPath ~/cs452/bin
+addToPath /u/rs2dsouza/arm-none-eabi-gcc/bin/

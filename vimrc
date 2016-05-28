@@ -151,7 +151,8 @@ let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 "
 set laststatus=2                " Always show the statusline
 " Newer statusline, since powerline has moved on
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts=0
 let g:airline_theme='bubblegum'
 let g:airline#extensions#hunks#enabled = 1
@@ -176,10 +177,19 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " autocomplete using clang
 
+Plugin 'tbelaire/vim-autoformat'
+let g:formatters_c = ["astyle_c"]
+noremap <localleader>= :Autoformat<CR>
+
+" Bundle 'rhysd/vim-clang-format'
+" noremap <loaclleader>= :ClangFormat<CR>
+
 " Tag browser
-" Plugin 'vim-scripts/taglist.vim' " Lets try something more modern
+" Bundle 'vim-scripts/taglist.vim' " Lets try something more modern
 Plugin 'majutsushi/tagbar'
-nnoremap <leader>t :TagbarToggle<CR>
+nnoremap <localleader>t :TagbarToggle<CR>
+nnoremap <localleader>T :TagbarOpenAutoClose<CR>
+nnoremap <localleader>f :TagbarTogglePause<CR>
 
 " Autobuilds builds ctags files
 " Plugin 'vim-misc'
@@ -202,6 +212,11 @@ Plugin 'rizzatti/dash.vim'
 " This stores lots of ftplugins and such, so only `Plugin`
 " lines should need to be in here.  Maybe globals too...
 Plugin 'tbelaire/vim_filetypes'
+
+
+" Arm assembly
+au BufNewFile,BufRead *.s,*.S set filetype=arm " arm = armv6/7
+Plugin 'ARM9/arm-syntax-vim'
 
 " Markdown
 " Doesn't seem to work
@@ -229,7 +244,7 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'marijnh/tern_for_vim'
 
 " C++ LLDB
-Plugin 'gilligan/vim-lldb'
+" Plugin 'gilligan/vim-lldb'
 
 " Less
 Plugin 'groenewege/vim-less'
@@ -367,6 +382,8 @@ set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 "set gcr=a:blinkon0              "Disable cursor blink
+
+set mouse=a                     "Allow mouse to control everything.
 
 set autoread                    "Reload files changed outside vim
 
