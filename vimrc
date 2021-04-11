@@ -174,8 +174,15 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 "Plugin 'code_complete'
 
 
-" Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'ycm-core/YouCompleteMe'
+let s:lsp = '/home/tbelaire/.vim/bundle/YouCompleteMe/lsp-examples/'
+let g:ycm_language_server = [
+  \   { 'name': 'rust',
+  \     'filetypes': [ 'rust' ],
+  \     'cmdline': [ expand( s:lsp .  '/rust/rust-analyzer/target/release/rust-analyzer' ) ],
+  \     'project_root_files': [ 'Cargo.toml' ],
+  \   },
+  \ ]
 " autocomplete using clang
 
 Plugin 'tbelaire/vim-autoformat'
