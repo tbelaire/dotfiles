@@ -49,3 +49,7 @@ if [ $TERM == "screen" ]; then
     TERM=screen-256color
 fi
 
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export PATH="$HOME/.poetry/bin:$PATH"
