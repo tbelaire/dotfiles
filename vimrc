@@ -47,6 +47,7 @@ Plugin 'tbelaire/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'ludovicchabant/vim-lawrencium'
 " Remove buffers once you move away
 " autocmd BufReadPost fugitive://* set bufhidden=delete
 
@@ -54,7 +55,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-dispatch'
 
 " Tells you about changes
-Plugin 'airblade/vim-gitgutter'
+Plugin 'sgur/vim-gitgutter'
 
 Plugin 'gregsexton/gitv'
 
@@ -255,6 +256,9 @@ Plugin 'cespare/vim-toml'
 Plugin 'wting/rust.vim'
 " idris (like haskell and coq)
 Plugin 'idris-hackers/idris-vim'
+
+" Tera and Jinja2 templates
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 " Haskell Fun stuff
 " Alternate haskell mode stuff
