@@ -3,3 +3,9 @@ if [ -d "/usr/share/doc/fzf/" ]; then
     source /usr/share/doc/fzf/examples/completion.bash
 fi
 
+if [ -d "/usr/share/fzf/" ]; then
+    source /usr/share/fzf/key-bindings.bash
+    source /usr/share/fzf/completion.bash
+fi
+
+
