@@ -41,7 +41,7 @@ sourceDir
 popd > /dev/null
 
 
-export EDITOR=vim
+export EDITOR=nvim
 # Ignore line that start with spaces, and duplicate lines
 export HISTCONTROL=ignoreboth
 

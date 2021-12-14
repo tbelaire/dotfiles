@@ -1,12 +1,1 @@
-alias ls='ls -G'
-alias ll='ls -la'
-alias ipy='ipython'
-
 alias latexmk='latexmk -pdf -pvc'
-
-alias aq='ag -Q'
-
-# For httpie
-function httpl {
-    http --pretty all "$*" | less -r
-}

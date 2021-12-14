@@ -47,35 +47,38 @@ Plugin 'tbelaire/vim-commentary'
 Plugin 'tpope/vim-unimpaired'
 
 Plugin 'tpope/vim-fugitive'
+" Extension of logs for fugitive
+Plugin 'gregsexton/gitv'
+" Like fugitive for hg
 Plugin 'ludovicchabant/vim-lawrencium'
+" Working with ag
+Plugin 'rking/ag.vim'
 " Remove buffers once you move away
 " autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " For :Make and :Dispatch
 Plugin 'tpope/vim-dispatch'
-
-" Tells you about changes
-Plugin 'sgur/vim-gitgutter'
-
-Plugin 'gregsexton/gitv'
-
-" aa for argumnet
-" ia for argument without ,
-" aA and iA eat the separator before not after
-Plugin 'b4winckler/vim-angry'
 " Unix commands
 Plugin 'tpope/vim-eunuch'
-
-" W! to sudo then write
-Plugin 'gmarik/sudo-gui.vim'
-" Working with ag
-Plugin 'rking/ag.vim'
 
 " Extends the keystrokes ga to show more information than just hex
 Plugin 'tpope/vim-characterize'
 " cr{s,c,m,u} for CoeRce to snake_case, camelCase, MixedCase, UPPER_CASE
 Plugin 'tpope/vim-abolish'
 " s{char}{char}, jump to cc, ; to repeat, ^O to return to start
+
+" Tells you about changes
+Plugin 'airblade/vim-gitgutter'
+
+
+" aa for argumnet
+" ia for argument without ,
+" aA and iA eat the separator before not after
+Plugin 'b4winckler/vim-angry'
+
+" W! to sudo then write
+Plugin 'gmarik/sudo-gui.vim'
+
 " Operator is z
 Plugin 'justinmk/vim-sneak'
 "ctrlp is buggy or something.  Not showing all my files
